@@ -1,4 +1,4 @@
-FROM ghdl/run:ubuntu18-llvm-5.0
+FROM ghdl/ext:vunit-gtkwave
 ENV TZ=Europe/Minsk
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && \ 
