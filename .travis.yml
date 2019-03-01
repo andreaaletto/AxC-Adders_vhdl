@@ -6,6 +6,6 @@ services:
 
 before_install:
 - docker info
-- docker build -t andreaaletto/axc-adders-vhdl .
+- docker build -t axc-adders-vhdl .
 script:
-- docker run andreaaletto/axc-adders-vhdl /bin/bash -c "mkdir /opt/build && cd /opt/build && cmake .. && make && make test"
+- docker run axc-adders-vhdl /bin/bash -c "mkdir /opt/build && cd /opt/build && cmake .. && make && make test"
