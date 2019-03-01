@@ -1,0 +1,2 @@
+add_testbench_source(tb_FullAdder.vhd tb_FullAdder)
+add_dependencies(tb_FullAdder FullAdder)
