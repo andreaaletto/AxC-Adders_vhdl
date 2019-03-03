@@ -19,6 +19,8 @@ before_install:
 - ./configure
 - make
 - sudo make install
+
+install:
 - cd $TRAVIS_BUILD_DIR
 - mkdir -p build && cd build
 - cmake ..
