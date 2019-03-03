@@ -4,8 +4,26 @@ language: C
 services:
 - docker
 
+cache:
+    directories:
+        $TRAVIS_BUILD_DIR/../ghdl
+
 before_install:
 - docker info
 - docker build -t andreaaletto/axc-adders-vhdl .
+- sudo apt-get update
+- sudo apt-get install gnat zlib -y
+- cd ..
+- git clone https://github.com/ghdl/ghdl.git
+- cd ghdl
+- ./configure
+- make
+- sudo make install
+- cd $TRAVIS_BUILD_DIR
+- mkdir -p build && cd build
+- cmake ..
+- make 
+- make test
+
 script:
 - docker run andreaaletto/axc-adders-vhdl /bin/bash -c "mkdir /opt/build && cd /opt/build && cmake .. && make && make test"
