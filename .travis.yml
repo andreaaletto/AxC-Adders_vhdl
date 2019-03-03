@@ -12,7 +12,7 @@ before_install:
 - docker info
 - docker build -t andreaaletto/axc-adders-vhdl .
 - sudo apt-get update
-- sudo apt-get install gnat zlib -y
+- sudo apt-get install -y gnat zlib1g-dev
 - cd ..
 - git clone https://github.com/ghdl/ghdl.git
 - cd ghdl
