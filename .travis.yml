@@ -14,7 +14,7 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install -y gnat zlib1g-dev
 - cd ..
-- git clone https://github.com/ghdl/ghdl.git
+- /bin/bash -c "if [ ! -d \"ghdl/.git\" ] ; then git clone https://github.com/ghdl/ghdl.git; else cd ghdl && git pull; fi"
 - cd ghdl
 - ./configure
 - make
