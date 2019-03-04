@@ -10,5 +10,7 @@ add_vhdl_source(AXA3.vhd AXA3)
 add_vhdl_source(InAx1.vhd InAx1)
 add_vhdl_source(InAx2.vhd InAx2)
 add_vhdl_source(InAx3.vhd InAx3)
+add_vhdl_source(generic_adder_subtractor.vhd generic_adder_subtractor)
 
 add_dependencies(RippleCarry FullAdder AMA1 AMA2 AMA3 AMA4 AXA1 AXA2 AXA3 InAx1 InAx2 InAx3)
+add_dependencies(generic_adder_subtractor RippleCarry)

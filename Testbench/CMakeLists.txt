@@ -13,4 +13,4 @@ add_subdirectory(AXA3)
 add_subdirectory(InAx1)
 add_subdirectory(InAx2)
 add_subdirectory(InAx3)
-
+add_subdirectory(generic_adder_subtractor)
