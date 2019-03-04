@@ -1,0 +1,2 @@
+add_testbench_source(tb_generic_adder_subtractor.vhd tb_generic_adder_subtractor)
+add_dependencies(tb_generic_adder_subtractor generic_adder_subtractor)
