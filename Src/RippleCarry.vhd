@@ -48,7 +48,7 @@ entity RippleCarry is
 	generic
 	(
 		--! Lunghezza, in termini di bit, degli addendi da sommare.
-		nbits : natural := 4;
+		nbits : natural := 16;
 
 		--! Numero di bit approssimati
 		nab : natural := 0;

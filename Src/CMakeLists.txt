@@ -1,4 +1,6 @@
+add_subdirectory(Common)
 add_subdirectory(Cells)
+add_subdirectory(DCT)
 add_vhdl_source(RippleCarry.vhd RippleCarry)
 add_vhdl_source(generic_adder_subtractor.vhd generic_adder_subtractor)
 

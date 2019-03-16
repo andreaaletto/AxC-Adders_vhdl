@@ -7,7 +7,7 @@ use work.InexactCellType.all;
 
 entity generic_adder_subtractor is
 	generic (
-			nbits		: natural := 4;
+			nbits		: natural := 16;
 			nab			: natural := 0;
 			cell_type	: Inexact_cell_type := cell_AMA1 
 	);
@@ -27,7 +27,7 @@ architecture structural of generic_adder_subtractor is
 	-- adder generico
 	component generic_adder is
 		generic (
-				nbits		: natural := 4;
+				nbits		: natural := 16;
 				nab			: natural := 0;
 				cell_type	: Inexact_cell_type := cell_AMA1 
 		);
