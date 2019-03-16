@@ -1,16 +1,5 @@
 add_vhdl_source(debug_func.vhd debug_func)
 
-
-add_subdirectory(FullAdder)
+add_subdirectory(Cells)
 add_subdirectory(RippleCarry)
-add_subdirectory(AMA1)
-add_subdirectory(AMA2)
-add_subdirectory(AMA3)
-add_subdirectory(AMA4)
-add_subdirectory(AXA1)
-add_subdirectory(AXA2)
-add_subdirectory(AXA3)
-add_subdirectory(InAx1)
-add_subdirectory(InAx2)
-add_subdirectory(InAx3)
 add_subdirectory(generic_adder_subtractor)
