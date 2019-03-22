@@ -66,7 +66,9 @@ entity BC121D is
 			y4 		: out   std_logic_vector (7 downto 0);
 			y5 		: out   std_logic_vector (7 downto 0);
 			y6 		: out   std_logic_vector (7 downto 0);
-			y7 		: out   std_logic_vector (7 downto 0)
+			y7 		: out   std_logic_vector (7 downto 0);
+
+			ready	: out 	std_logic
     );
 end BC121D;
 
@@ -265,7 +267,7 @@ begin
 	y7 <= x4d_out (7 downto 0);
 
 	--TODO: se xid_out(15 downto 8) è diverso da "00000000" c'è un errore di troncamento
-	--TODO: inserire tutti i generics per nab e celltype negli adder
+	--TODO: impostare l'output ready a 1 quando il processo di trasformazione è terminato
 
 end dataflow;
 
