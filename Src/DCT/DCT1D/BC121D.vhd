@@ -6,10 +6,44 @@ library work;
 use work.InexactCellType.all;
 
 entity BC121D is
-	generic ( --qui ci va nab0, cell0, nab1, cell1, ... per ogni rca che prevede l'algoritmo
-			nbits		: natural := 4;
-			nab			: natural := 0;
-			cell_type	: Inexact_cell_type := cell_AMA1 
+	generic (
+			nab0		: natural 			:= 0;
+			cell_type0	: Inexact_cell_type := cell_AMA1; 
+			nab1		: natural 			:= 0;
+			cell_type1	: Inexact_cell_type := cell_AMA1; 
+			nab2		: natural 			:= 0;
+			cell_type2	: Inexact_cell_type := cell_AMA1; 
+			nab3		: natural 			:= 0;
+			cell_type3	: Inexact_cell_type := cell_AMA1; 
+			nab4		: natural 			:= 0;
+			cell_type4	: Inexact_cell_type := cell_AMA1; 
+			nab5		: natural 			:= 0;
+			cell_type5	: Inexact_cell_type := cell_AMA1; 
+			nab6		: natural 			:= 0;
+			cell_type6	: Inexact_cell_type := cell_AMA1; 
+			nab7		: natural 			:= 0;
+			cell_type7	: Inexact_cell_type := cell_AMA1; 
+			nab8		: natural 			:= 0;
+			cell_type8	: Inexact_cell_type := cell_AMA1; 
+			nab9		: natural 			:= 0;
+			cell_type9	: Inexact_cell_type := cell_AMA1; 
+			nab10		: natural 			:= 0;
+			cell_type10	: Inexact_cell_type := cell_AMA1; 
+			nab11		: natural 			:= 0;
+			cell_type11	: Inexact_cell_type := cell_AMA1; 
+			nab12		: natural 			:= 0;
+			cell_type12	: Inexact_cell_type := cell_AMA1; 
+			nab13		: natural 			:= 0;
+			cell_type13	: Inexact_cell_type := cell_AMA1; 
+			nab14		: natural 			:= 0;
+			cell_type14	: Inexact_cell_type := cell_AMA1; 
+			nab15		: natural 			:= 0;
+			cell_type15	: Inexact_cell_type := cell_AMA1; 
+			nab16		: natural 			:= 0;
+			cell_type16	: Inexact_cell_type := cell_AMA1; 
+			nab17		: natural 			:= 0;
+			cell_type17	: Inexact_cell_type := cell_AMA1
+ 
 	);
 	
     port (
@@ -161,14 +195,14 @@ begin
 
 	-- BC12 First step
 
-	sum_0a7a_inst : adder port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '0', sum => x0b_in);
-	sum_1a6a_inst : adder port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '0', sum => x1b_in);
-	sum_2a5a_inst : adder port map ( add_1 => x2a, add_2 => x5a, sub_add_n => '0', sum => x2b_in);
-	sum_3a4a_inst : adder port map ( add_1 => x3a, add_2 => x4a, sub_add_n => '0', sum => x3b_in);
-	sub_3a4a_inst : adder port map ( add_1 => x3a, add_2 => x4a, sub_add_n => '1', sum => x4b_in);
-	sub_2a5a_inst : adder port map ( add_1 => x2a, add_2 => x5a, sub_add_n => '1', sum => x5b_in);
-	sub_1a6a_inst : adder port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '1', sum => x6b_in);
-	sub_0a7a_inst : adder port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '1', sum => x7b_in);
+	sum_0a7a_inst : adder generic map (nab => nab0, cell_type => cell_type0) port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '0', sum => x0b_in);
+	sum_1a6a_inst : adder generic map (nab => nab1, cell_type => cell_type1) port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '0', sum => x1b_in);
+	sum_2a5a_inst : adder generic map (nab => nab2, cell_type => cell_type2) port map ( add_1 => x2a, add_2 => x5a, sub_add_n => '0', sum => x2b_in);
+	sum_3a4a_inst : adder generic map (nab => nab3, cell_type => cell_type3) port map ( add_1 => x3a, add_2 => x4a, sub_add_n => '0', sum => x3b_in);
+	sub_3a4a_inst : adder generic map (nab => nab4, cell_type => cell_type4) port map ( add_1 => x3a, add_2 => x4a, sub_add_n => '1', sum => x4b_in);
+	sub_2a5a_inst : adder generic map (nab => nab5, cell_type => cell_type5) port map ( add_1 => x2a, add_2 => x5a, sub_add_n => '1', sum => x5b_in);
+	sub_1a6a_inst : adder generic map (nab => nab6, cell_type => cell_type6) port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '1', sum => x6b_in);
+	sub_0a7a_inst : adder generic map (nab => nab7, cell_type => cell_type7) port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '1', sum => x7b_in);
 
 	reg_x0b_inst : reg port map( clk => clk, en => en, data_in => x0b_in, data_out => x0b_out);
 	reg_x1b_inst : reg port map( clk => clk, en => en, data_in => x1b_in, data_out => x1b_out);
@@ -181,13 +215,13 @@ begin
 
 	-- BC12 Second step
 
-	sum_0b3b_inst : adder port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '0', sum => x0c_in);
-	sum_1b2b_inst : adder port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '0', sum => x1c_in);
-	sub_1b2b_inst : adder port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '1', sum => x2c_in);
-	sub_0b3b_inst : adder port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '1', sum => x3c_in);
-	inv_4b		  : adder port map ( add_1 => "00000000", add_2 => x4b_out, sub_add_n => '1', sum => x4c_in);
-	inv_5b		  : adder port map ( add_1 => "00000000", add_2 => x5b_out, sub_add_n => '1', sum => x5c_in);
-	inv_6b		  : adder port map ( add_1 => "00000000", add_2 => x6b_out, sub_add_n => '1', sum => x6c_in);
+	sum_0b3b_inst : adder generic map (nab => nab8, cell_type => cell_type8) port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '0', sum => x0c_in);
+	sum_1b2b_inst : adder generic map (nab => nab9, cell_type => cell_type9) port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '0', sum => x1c_in);
+	sub_1b2b_inst : adder generic map (nab => nab10, cell_type => cell_type10) port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '1', sum => x2c_in);
+	sub_0b3b_inst : adder generic map (nab => nab11, cell_type => cell_type11) port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '1', sum => x3c_in);
+	inv_4b		  : adder generic map (nab => nab12, cell_type => cell_type12) port map ( add_1 => "00000000", add_2 => x4b_out, sub_add_n => '1', sum => x4c_in);
+	inv_5b		  : adder generic map (nab => nab13, cell_type => cell_type13) port map ( add_1 => "00000000", add_2 => x5b_out, sub_add_n => '1', sum => x5c_in);
+	inv_6b		  : adder generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => "00000000", add_2 => x6b_out, sub_add_n => '1', sum => x6c_in);
 	x7c_in <= x7b_out;
 
 	reg_x0c_inst : reg port map( clk => clk, en => en, data_in => x0c_in, data_out => x0c_out);
@@ -201,9 +235,9 @@ begin
 
 	-- BC12 Third step
 
-	sum_0c1c_inst : adder port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d_in);
-	sub_0c1c_inst : adder port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '1', sum => x1d_in);
-	inv_2c		  : adder port map ( add_1 => "00000000", add_2 => x2c_out, sub_add_n => '1', sum => x2d_in);
+	sum_0c1c_inst : adder generic map (nab => nab15, cell_type => cell_type15) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d_in);
+	sub_0c1c_inst : adder generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '1', sum => x1d_in);
+	inv_2c		  : adder generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => "00000000", add_2 => x2c_out, sub_add_n => '1', sum => x2d_in);
 	x3d_in <= x3c_out;
 	x4d_in <= x4c_out;
 	x5d_in <= x5c_out;
