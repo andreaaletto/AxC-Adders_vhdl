@@ -50,23 +50,23 @@ entity BC121D is
 			clk		: in   std_logic;
 			en		: in   std_logic;
 
-			x0 		: in   std_logic_vector (7 downto 0);
-			x1 		: in   std_logic_vector (7 downto 0);
-			x2 		: in   std_logic_vector (7 downto 0);
-			x3 		: in   std_logic_vector (7 downto 0);
-			x4 		: in   std_logic_vector (7 downto 0);
-			x5 		: in   std_logic_vector (7 downto 0);
-			x6 		: in   std_logic_vector (7 downto 0);
-			x7 		: in   std_logic_vector (7 downto 0);
+			x0 		: in   std_logic_vector (15 downto 0);
+			x1 		: in   std_logic_vector (15 downto 0);
+			x2 		: in   std_logic_vector (15 downto 0);
+			x3 		: in   std_logic_vector (15 downto 0);
+			x4 		: in   std_logic_vector (15 downto 0);
+			x5 		: in   std_logic_vector (15 downto 0);
+			x6 		: in   std_logic_vector (15 downto 0);
+			x7 		: in   std_logic_vector (15 downto 0);
 
-			y0 		: out   std_logic_vector (7 downto 0);
-			y1 		: out   std_logic_vector (7 downto 0);
-			y2 		: out   std_logic_vector (7 downto 0);
-			y3 		: out   std_logic_vector (7 downto 0);
-			y4 		: out   std_logic_vector (7 downto 0);
-			y5 		: out   std_logic_vector (7 downto 0);
-			y6 		: out   std_logic_vector (7 downto 0);
-			y7 		: out   std_logic_vector (7 downto 0);
+			y0 		: out   std_logic_vector (15 downto 0);
+			y1 		: out   std_logic_vector (15 downto 0);
+			y2 		: out   std_logic_vector (15 downto 0);
+			y3 		: out   std_logic_vector (15 downto 0);
+			y4 		: out   std_logic_vector (15 downto 0);
+			y5 		: out   std_logic_vector (15 downto 0);
+			y6 		: out   std_logic_vector (15 downto 0);
+			y7 		: out   std_logic_vector (15 downto 0);
 
 			ready	: out 	std_logic
     );
@@ -177,23 +177,14 @@ begin
 
 	-- Extend input to 16 bit
 
-	x0a(7 downto 0) <= x0;
-	x1a(7 downto 0) <= x1;
-	x2a(7 downto 0) <= x2;
-	x3a(7 downto 0) <= x3;
-	x4a(7 downto 0) <= x4;
-	x5a(7 downto 0) <= x5;
-	x6a(7 downto 0) <= x6;
-	x7a(7 downto 0) <= x7;
-
-	x0a(15 downto 8) <= "00000000";
-	x1a(15 downto 8) <= "00000000";
-	x2a(15 downto 8) <= "00000000";
-	x3a(15 downto 8) <= "00000000";
-	x4a(15 downto 8) <= "00000000";
-	x5a(15 downto 8) <= "00000000";
-	x6a(15 downto 8) <= "00000000";
-	x7a(15 downto 8) <= "00000000";
+	x0a <= x0;
+	x1a <= x1;
+	x2a <= x2;
+	x3a <= x3;
+	x4a <= x4;
+	x5a <= x5;
+	x6a <= x6;
+	x7a <= x7;
 
 	-- BC12 First step
 
@@ -257,14 +248,14 @@ begin
 
 	-- BC12 Permutation step
 
-	y0 <= x0d_out (7 downto 0);
-	y1 <= x7d_out (7 downto 0);
-	y2 <= x3d_out (7 downto 0);
-	y3 <= x5d_out (7 downto 0);
-	y4 <= x1d_out (7 downto 0);
-	y5 <= x6d_out (7 downto 0);
-	y6 <= x2d_out (7 downto 0);
-	y7 <= x4d_out (7 downto 0);
+	y0 <= x0d_out;
+	y1 <= x7d_out;
+	y2 <= x3d_out;
+	y3 <= x5d_out;
+	y4 <= x1d_out;
+	y5 <= x6d_out;
+	y6 <= x2d_out;
+	y7 <= x4d_out;
 
 	--TODO: se xid_out(15 downto 8) è diverso da "00000000" c'è un errore di troncamento
 	--TODO: impostare l'output ready a 1 quando il processo di trasformazione è terminato
