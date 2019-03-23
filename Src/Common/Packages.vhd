@@ -13,3 +13,7 @@ end package;
 package InexactCellType is 
 	type Inexact_cell_type is (cell_AMA1, cell_AMA2, cell_AMA3, cell_AMA4, cell_AXA1, cell_AXA2, cell_AXA3, cell_InAx1, cell_InAx2, cell_InAx3);
 end package;
+
+package AlgorithmType is 
+	type algorithm_type is (BC12, CB11, BAS08, BAS09, BAS11, PEA12, PEA14);
+end package;
