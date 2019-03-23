@@ -237,7 +237,6 @@ begin
 	blk_expected(0)(5) <= std_logic_vector(to_signed(1, 16));
 	blk_expected(0)(6) <= std_logic_vector(to_signed(-21, 16));
 	blk_expected(0)(7) <= std_logic_vector(to_signed(-7, 16));
-
 	blk_expected(1)(0) <= std_logic_vector(to_signed(-3, 16));
 	blk_expected(1)(1) <= std_logic_vector(to_signed(2, 16));
 	blk_expected(1)(2) <= std_logic_vector(to_signed(9, 16));
@@ -246,7 +245,6 @@ begin
 	blk_expected(1)(5) <= std_logic_vector(to_signed(13, 16));
 	blk_expected(1)(6) <= std_logic_vector(to_signed(16, 16));
 	blk_expected(1)(7) <= std_logic_vector(to_signed(13, 16));
-
 	blk_expected(2)(0) <= std_logic_vector(to_signed(-24, 16));
 	blk_expected(2)(1) <= std_logic_vector(to_signed(2, 16));
 	blk_expected(2)(2) <= std_logic_vector(to_signed(5, 16));
@@ -255,7 +253,6 @@ begin
 	blk_expected(2)(5) <= std_logic_vector(to_signed(-9, 16));
 	blk_expected(2)(6) <= std_logic_vector(to_signed(-21, 16));
 	blk_expected(2)(7) <= std_logic_vector(to_signed(7, 16));
-
 	blk_expected(3)(0) <= std_logic_vector(to_signed(4, 16));
 	blk_expected(3)(1) <= std_logic_vector(to_signed(0, 16));
 	blk_expected(3)(2) <= std_logic_vector(to_signed(-7, 16));
@@ -264,7 +261,6 @@ begin
 	blk_expected(3)(5) <= std_logic_vector(to_signed(-3, 16));
 	blk_expected(3)(6) <= std_logic_vector(to_signed(3, 16));
 	blk_expected(3)(7) <= std_logic_vector(to_signed(1, 16));
-
 	blk_expected(4)(0) <= std_logic_vector(to_signed(-8, 16));
 	blk_expected(4)(1) <= std_logic_vector(to_signed(-8, 16));
 	blk_expected(4)(2) <= std_logic_vector(to_signed(-7, 16));
@@ -273,7 +269,6 @@ begin
 	blk_expected(4)(5) <= std_logic_vector(to_signed(-3, 16));
 	blk_expected(4)(6) <= std_logic_vector(to_signed(-17, 16));
 	blk_expected(4)(7) <= std_logic_vector(to_signed(-11, 16));
-
 	blk_expected(5)(0) <= std_logic_vector(to_signed(0, 16));  
 	blk_expected(5)(1) <= std_logic_vector(to_signed(2, 16));
 	blk_expected(5)(2) <= std_logic_vector(to_signed(-1, 16));
@@ -282,7 +277,6 @@ begin
 	blk_expected(5)(5) <= std_logic_vector(to_signed(5, 16));
 	blk_expected(5)(6) <= std_logic_vector(to_signed(-7, 16));
 	blk_expected(5)(7) <= std_logic_vector(to_signed(-7, 16));
-
 	blk_expected(6)(0) <= std_logic_vector(to_signed(14, 16)); 
 	blk_expected(6)(1) <= std_logic_vector(to_signed(-2, 16));
 	blk_expected(6)(2) <= std_logic_vector(to_signed(-18, 16));
@@ -291,7 +285,6 @@ begin
 	blk_expected(6)(5) <= std_logic_vector(to_signed(8, 16));
 	blk_expected(6)(6) <= std_logic_vector(to_signed(-8, 16));
 	blk_expected(6)(7) <= std_logic_vector(to_signed(4, 16));
-
 	blk_expected(7)(0) <= std_logic_vector(to_signed(-3, 16));
 	blk_expected(7)(1) <= std_logic_vector(to_signed(2, 16));
 	blk_expected(7)(2) <= std_logic_vector(to_signed(0, 16));

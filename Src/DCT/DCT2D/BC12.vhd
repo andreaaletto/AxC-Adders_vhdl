@@ -126,14 +126,29 @@ architecture dataflow of BC12 is
 	end component;
 	for all : reg use entity work.GenericRegister;
 
+	signal row_transf_blk_in	:	dct_block;
 	signal row_transf_blk_out	:	dct_block;
 	signal transp_blk_in		:	dct_block;
 	signal transp_blk_out		:	dct_block;
+	signal col_transf_blk_in	:	dct_block;
 	signal col_transf_blk_out	:	dct_block;
 
 begin
 
-	-- ROWS TRANSFORMATION BLOCK
+	-- Initial transposition
+	initial_transp_generate : for i in 0 to 7 generate
+		row_transf_blk_in(i)(0) <= blk_in(0)(i);
+		row_transf_blk_in(i)(1) <= blk_in(1)(i);
+		row_transf_blk_in(i)(2) <= blk_in(2)(i);
+		row_transf_blk_in(i)(3) <= blk_in(3)(i);
+		row_transf_blk_in(i)(4) <= blk_in(4)(i);
+		row_transf_blk_in(i)(5) <= blk_in(5)(i);
+		row_transf_blk_in(i)(6) <= blk_in(6)(i);
+		row_transf_blk_in(i)(7) <= blk_in(7)(i);
+	end generate;
+
+
+	-- Rows transformation block
 
 	row_transform_generate : for i in 0 to 7 generate
 		row_transform_inst: BC121D
@@ -179,7 +194,7 @@ begin
 				clk => clk,
 				en => en,
 
-				column_in => blk_in(i),
+				column_in => row_transf_blk_in(i),
 				column_out => row_transf_blk_out(i),
 
 				ready => open
@@ -188,12 +203,24 @@ begin
 
 	
 
-	-- TODO: transposition block
+	-- DCT1D transposition 
 	transp_blk_in <= row_transf_blk_out;
+	transp_blk_generate : for i in 0 to 7 generate
+		transp_blk_out(i)(0) <= transp_blk_in(0)(i);
+		transp_blk_out(i)(1) <= transp_blk_in(1)(i);
+		transp_blk_out(i)(2) <= transp_blk_in(2)(i);
+		transp_blk_out(i)(3) <= transp_blk_in(3)(i);
+		transp_blk_out(i)(4) <= transp_blk_in(4)(i);
+		transp_blk_out(i)(5) <= transp_blk_in(5)(i);
+		transp_blk_out(i)(6) <= transp_blk_in(6)(i);
+		transp_blk_out(i)(7) <= transp_blk_in(7)(i);
+	end generate;
 
 
-	-- COLUMN TRANSFORMATION BLOCK
 
+	-- Column transformation block
+
+	col_transf_blk_in <= transp_blk_out;
 	column_transform_generate : for i in 0 to 7 generate
 		column_transform_inst: BC121D
 			generic map(
@@ -238,14 +265,14 @@ begin
 				clk => clk,
 				en => en,
 
-				column_in => transp_blk_out(i),
+				column_in => col_transf_blk_in(i),
 				column_out => col_transf_blk_out(i),
 
 				ready => open
 			);
 	end generate;
 
-	-- Exit
+	-- Output assignament
 	blk_out <= col_transf_blk_out;
 
 end dataflow;
