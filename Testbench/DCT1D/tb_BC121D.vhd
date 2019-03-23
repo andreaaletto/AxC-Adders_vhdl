@@ -100,6 +100,8 @@ end component BC121D;
 	signal y5 : std_logic_vector (15 downto 0);
 	signal y6 : std_logic_vector (15 downto 0);
 	signal y7 : std_logic_vector (15 downto 0);
+
+	signal finished : std_logic := '0';
 	
 begin
 
@@ -124,6 +126,27 @@ begin
 --	    0,   2,  -1,   4, -14,  5,  -7,  -7;
 --	   14,  -2, -18,  -4,  14,  8,  -8,   4;
 --	   -3,   2,   0,  -3,  11,  0,   1,   8]
+
+-- Original vector:
+-- [131;
+--  113;
+--  116;
+--  109;
+--  105;
+--  90;
+--  95;
+--  93]
+
+-- Transf vector:
+-- [852;
+--  38;
+--  10;
+--  -26;
+--  24;
+--  -18;
+--  -2;
+--  -4]
+
 
 
 	uut : BC121D
@@ -170,56 +193,59 @@ begin
 		);
 
 	-- clock generator
-	clk <= not clk after 5 ns;
+	clk <= not clk after 5 ns when finished /= '1' else '0';
 	
 	-- stimulus process
 	stim_proc: process
 	begin		
 
 		wait for 10 ns;	
-		x0 <= std_logic_vector(to_signed(127, 16));
-		x1 <= std_logic_vector(to_signed(123, 16));
-		x2 <= std_logic_vector(to_signed(125, 16));
-		x3 <= std_logic_vector(to_signed(120, 16));
-		x4 <= std_logic_vector(to_signed(126, 16));
-		x5 <= std_logic_vector(to_signed(123, 16));
-		x6 <= std_logic_vector(to_signed(127, 16));
-		x7 <= std_logic_vector(to_signed(128, 16));
+		x0 <= std_logic_vector(to_signed(131, 16));
+		x1 <= std_logic_vector(to_signed(113, 16));
+		x2 <= std_logic_vector(to_signed(116, 16));
+		x3 <= std_logic_vector(to_signed(109, 16));
+		x4 <= std_logic_vector(to_signed(105, 16));
+		x5 <= std_logic_vector(to_signed(90, 16));
+		x6 <= std_logic_vector(to_signed(95, 16));
+		x7 <= std_logic_vector(to_signed(93, 16));
 
-		wait for 400 ns; --FIXME: modificare questa condizione in wait for ready = 1
-		
-		assert y0 = std_logic_vector(to_signed(8060, 16)) 
+		wait for 600 ns; --FIXME: modificare questa condizione in wait for ready = 1
+	   
+		assert y0 = std_logic_vector(to_signed(852, 16)) 
 			report "Errore calcolo componente y0"
 			severity error;
 		
-		assert y1 = std_logic_vector(to_signed(-3, 16)) 
+		assert y1 = std_logic_vector(to_signed(38, 16)) 
 			report "Errore calcolo componente y1"
 			severity error;
 		
-		assert y2 = std_logic_vector(to_signed(-24, 16)) 
+		assert y2 = std_logic_vector(to_signed(10, 16)) 
 			report "Errore calcolo componente y2"
 			severity error;
 		
-		assert y3 = std_logic_vector(to_signed(4, 16)) 
+		assert y3 = std_logic_vector(to_signed(-26, 16)) 
 			report "Errore calcolo componente y3"
 			severity error;
 		
-		assert y4 = std_logic_vector(to_signed(-8, 16)) 
+		assert y4 = std_logic_vector(to_signed(24, 16)) 
 			report "Errore calcolo componente y4"
 			severity error;
 		
-		assert y5 = std_logic_vector(to_signed(0, 16)) 
+		assert y5 = std_logic_vector(to_signed(-18, 16)) 
 			report "Errore calcolo componente y5"
 			severity error;
 		
-		assert y6 = std_logic_vector(to_signed(14, 16)) 
+		assert y6 = std_logic_vector(to_signed(-2, 16)) 
 			report "Errore calcolo componente y6"
 			severity error;
 		
-		assert y7 = std_logic_vector(to_signed(-3, 16)) 
+		assert y7 = std_logic_vector(to_signed(-4, 16)) 
 			report "Errore calcolo componente y7"
 			severity error;
 
+		report "Test del componente BC12-1D concluso." severity note;
+
+		finished <= '1';
 	wait;
 	end process;
 

@@ -99,6 +99,7 @@ architecture dataflow of BC121D is
 		port 
 		(	
 			clk  : in std_logic;
+			rst  : in std_logic;
 			data_in : in std_logic_vector (N-1 downto 0);
 			en : in std_logic;
 			data_out : out std_logic_vector (N-1 downto 0) 
@@ -197,14 +198,14 @@ begin
 	sub_1a6a_inst : adder generic map (nab => nab6, cell_type => cell_type6) port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '1', sum => x6b_in);
 	sub_0a7a_inst : adder generic map (nab => nab7, cell_type => cell_type7) port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '1', sum => x7b_in);
 
-	reg_x0b_inst : reg port map( clk => clk, en => en, data_in => x0b_in, data_out => x0b_out);
-	reg_x1b_inst : reg port map( clk => clk, en => en, data_in => x1b_in, data_out => x1b_out);
-	reg_x2b_inst : reg port map( clk => clk, en => en, data_in => x2b_in, data_out => x2b_out);
-	reg_x3b_inst : reg port map( clk => clk, en => en, data_in => x3b_in, data_out => x3b_out);
-	reg_x4b_inst : reg port map( clk => clk, en => en, data_in => x4b_in, data_out => x4b_out);
-	reg_x5b_inst : reg port map( clk => clk, en => en, data_in => x5b_in, data_out => x5b_out);
-	reg_x6b_inst : reg port map( clk => clk, en => en, data_in => x6b_in, data_out => x6b_out);
-	reg_x7b_inst : reg port map( clk => clk, en => en, data_in => x7b_in, data_out => x7b_out);
+	reg_x0b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x0b_in, data_out => x0b_out);
+	reg_x1b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x1b_in, data_out => x1b_out);
+	reg_x2b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x2b_in, data_out => x2b_out);
+	reg_x3b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x3b_in, data_out => x3b_out);
+	reg_x4b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x4b_in, data_out => x4b_out);
+	reg_x5b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x5b_in, data_out => x5b_out);
+	reg_x6b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x6b_in, data_out => x6b_out);
+	reg_x7b_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x7b_in, data_out => x7b_out);
 
 	-- BC12 Second step
 
@@ -212,39 +213,39 @@ begin
 	sum_1b2b_inst : adder generic map (nab => nab9, cell_type => cell_type9) port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '0', sum => x1c_in);
 	sub_1b2b_inst : adder generic map (nab => nab10, cell_type => cell_type10) port map ( add_1 => x1b_out	, add_2 => x2b_out, sub_add_n => '1', sum => x2c_in);
 	sub_0b3b_inst : adder generic map (nab => nab11, cell_type => cell_type11) port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '1', sum => x3c_in);
-	inv_4b		  : adder generic map (nab => nab12, cell_type => cell_type12) port map ( add_1 => "00000000", add_2 => x4b_out, sub_add_n => '1', sum => x4c_in);
-	inv_5b		  : adder generic map (nab => nab13, cell_type => cell_type13) port map ( add_1 => "00000000", add_2 => x5b_out, sub_add_n => '1', sum => x5c_in);
-	inv_6b		  : adder generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => "00000000", add_2 => x6b_out, sub_add_n => '1', sum => x6c_in);
+	inv_4b		  : adder generic map (nab => nab12, cell_type => cell_type12) port map ( add_1 => "0000000000000000", add_2 => x4b_out, sub_add_n => '1', sum => x4c_in);
+	inv_5b		  : adder generic map (nab => nab13, cell_type => cell_type13) port map ( add_1 => "0000000000000000", add_2 => x5b_out, sub_add_n => '1', sum => x5c_in);
+	inv_6b		  : adder generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => "0000000000000000", add_2 => x6b_out, sub_add_n => '1', sum => x6c_in);
 	x7c_in <= x7b_out;
 
-	reg_x0c_inst : reg port map( clk => clk, en => en, data_in => x0c_in, data_out => x0c_out);
-	reg_x1c_inst : reg port map( clk => clk, en => en, data_in => x1c_in, data_out => x1c_out);
-	reg_x2c_inst : reg port map( clk => clk, en => en, data_in => x2c_in, data_out => x2c_out);
-	reg_x3c_inst : reg port map( clk => clk, en => en, data_in => x3c_in, data_out => x3c_out);
-	reg_x4c_inst : reg port map( clk => clk, en => en, data_in => x4c_in, data_out => x4c_out);
-	reg_x5c_inst : reg port map( clk => clk, en => en, data_in => x5c_in, data_out => x5c_out);
-	reg_x6c_inst : reg port map( clk => clk, en => en, data_in => x6c_in, data_out => x6c_out);
-	reg_x7c_inst : reg port map( clk => clk, en => en, data_in => x7c_in, data_out => x7c_out);
+	reg_x0c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x0c_in, data_out => x0c_out);
+	reg_x1c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x1c_in, data_out => x1c_out);
+	reg_x2c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x2c_in, data_out => x2c_out);
+	reg_x3c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x3c_in, data_out => x3c_out);
+	reg_x4c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x4c_in, data_out => x4c_out);
+	reg_x5c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x5c_in, data_out => x5c_out);
+	reg_x6c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x6c_in, data_out => x6c_out);
+	reg_x7c_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x7c_in, data_out => x7c_out);
 
 	-- BC12 Third step
 
 	sum_0c1c_inst : adder generic map (nab => nab15, cell_type => cell_type15) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d_in);
 	sub_0c1c_inst : adder generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '1', sum => x1d_in);
-	inv_2c		  : adder generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => "00000000", add_2 => x2c_out, sub_add_n => '1', sum => x2d_in);
+	inv_2c		  : adder generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => "0000000000000000", add_2 => x2c_out, sub_add_n => '1', sum => x2d_in);
 	x3d_in <= x3c_out;
 	x4d_in <= x4c_out;
 	x5d_in <= x5c_out;
 	x6d_in <= x6c_out;
 	x7d_in <= x7c_out;
 
-	reg_x0d_inst : reg port map( clk => clk, en => en, data_in => x0d_in, data_out => x0d_out);
-	reg_x1d_inst : reg port map( clk => clk, en => en, data_in => x1d_in, data_out => x1d_out);
-	reg_x2d_inst : reg port map( clk => clk, en => en, data_in => x2d_in, data_out => x2d_out);
-	reg_x3d_inst : reg port map( clk => clk, en => en, data_in => x3d_in, data_out => x3d_out);
-	reg_x4d_inst : reg port map( clk => clk, en => en, data_in => x4d_in, data_out => x4d_out);
-	reg_x5d_inst : reg port map( clk => clk, en => en, data_in => x5d_in, data_out => x5d_out);
-	reg_x6d_inst : reg port map( clk => clk, en => en, data_in => x6d_in, data_out => x6d_out);
-	reg_x7d_inst : reg port map( clk => clk, en => en, data_in => x7d_in, data_out => x7d_out);
+	reg_x0d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x0d_in, data_out => x0d_out);
+	reg_x1d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x1d_in, data_out => x1d_out);
+	reg_x2d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x2d_in, data_out => x2d_out);
+	reg_x3d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x3d_in, data_out => x3d_out);
+	reg_x4d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x4d_in, data_out => x4d_out);
+	reg_x5d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x5d_in, data_out => x5d_out);
+	reg_x6d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x6d_in, data_out => x6d_out);
+	reg_x7d_inst : reg port map( clk => clk, rst => '1', en => en, data_in => x7d_in, data_out => x7d_out);
 
 	-- BC12 Permutation step
 

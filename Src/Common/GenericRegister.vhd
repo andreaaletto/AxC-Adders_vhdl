@@ -44,6 +44,7 @@ entity GenericRegister is
 	); 
 	port (	
 		clk  : in std_logic;
+		rst  : in std_logic;
 		data_in : in std_logic_vector (N-1 downto 0);
 		en : in std_logic;
 		data_out : out std_logic_vector (N-1 downto 0)
@@ -53,6 +54,17 @@ end GenericRegister;
 --! @brief 
 architecture GenericRegister of GenericRegister is
 begin
+
+	process(clk, rst)
+    begin
+        if rst = '0' then
+            data_out <= (others => '0');
+        elsif rising_edge(clk) then
+            if en = '1' then
+                data_out <= data_in;
+            end if;
+        end if;
+    end process;
 	
 end architecture;
 
