@@ -24,10 +24,6 @@
 -- 17-04-2017: creazione del file e prima implementazione
 -- 01-10-2018: Documentazione del codice e test esaustivo
 
-package InexactCellType is 
-	type Inexact_cell_type is (cell_AMA1, cell_AMA2, cell_AMA3, cell_AMA4, cell_AXA1, cell_AXA2, cell_AXA3, cell_InAx1, cell_InAx2, cell_InAx3);
-end package;
-
 library ieee;
 use ieee.std_logic_1164.all;
 

@@ -4,6 +4,7 @@ use ieee.numeric_std.all;
 
 library work;
 use work.InexactCellType.all;
+use work.ImageBlockType.all;
 
 entity BC121D is
 	generic (
@@ -47,28 +48,13 @@ entity BC121D is
 	);
 	
     port (
-			clk		: in   std_logic;
-			en		: in   std_logic;
+			clk				: in   std_logic;
+			en				: in   std_logic;
 
-			x0 		: in   std_logic_vector (15 downto 0);
-			x1 		: in   std_logic_vector (15 downto 0);
-			x2 		: in   std_logic_vector (15 downto 0);
-			x3 		: in   std_logic_vector (15 downto 0);
-			x4 		: in   std_logic_vector (15 downto 0);
-			x5 		: in   std_logic_vector (15 downto 0);
-			x6 		: in   std_logic_vector (15 downto 0);
-			x7 		: in   std_logic_vector (15 downto 0);
+			column_in 		: in dct_vector;
+			column_out 		: out dct_vector;
 
-			y0 		: out   std_logic_vector (15 downto 0);
-			y1 		: out   std_logic_vector (15 downto 0);
-			y2 		: out   std_logic_vector (15 downto 0);
-			y3 		: out   std_logic_vector (15 downto 0);
-			y4 		: out   std_logic_vector (15 downto 0);
-			y5 		: out   std_logic_vector (15 downto 0);
-			y6 		: out   std_logic_vector (15 downto 0);
-			y7 		: out   std_logic_vector (15 downto 0);
-
-			ready	: out 	std_logic
+			ready			: out 	std_logic
     );
 end BC121D;
 
@@ -178,14 +164,14 @@ begin
 
 	-- Extend input to 16 bit
 
-	x0a <= x0;
-	x1a <= x1;
-	x2a <= x2;
-	x3a <= x3;
-	x4a <= x4;
-	x5a <= x5;
-	x6a <= x6;
-	x7a <= x7;
+	x0a <= column_in(0);
+	x1a <= column_in(1);
+	x2a <= column_in(2);
+	x3a <= column_in(3);
+	x4a <= column_in(4);
+	x5a <= column_in(5);
+	x6a <= column_in(6);
+	x7a <= column_in(7);
 
 	-- BC12 First step
 
@@ -249,14 +235,14 @@ begin
 
 	-- BC12 Permutation step
 
-	y0 <= x0d_out;
-	y1 <= x7d_out;
-	y2 <= x3d_out;
-	y3 <= x5d_out;
-	y4 <= x1d_out;
-	y5 <= x6d_out;
-	y6 <= x2d_out;
-	y7 <= x4d_out;
+	column_out(0) <= x0d_out;
+	column_out(1) <= x7d_out;
+	column_out(2) <= x3d_out;
+	column_out(3) <= x5d_out;
+	column_out(4) <= x1d_out;
+	column_out(5) <= x6d_out;
+	column_out(6) <= x2d_out;
+	column_out(7) <= x4d_out;
 
 	--TODO: se xid_out(15 downto 8) è diverso da "00000000" c'è un errore di troncamento
 	--TODO: impostare l'output ready a 1 quando il processo di trasformazione è terminato

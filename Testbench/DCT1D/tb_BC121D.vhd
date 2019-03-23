@@ -4,12 +4,11 @@ use ieee.numeric_std.all;
 
 library work;
 use work.InexactCellType.all;
+use work.ImageBlockType.all;
  
 entity tb_BC121D is
 end tb_BC121D;
 
-
- 
 architecture behavioral of tb_BC121D is 
 
 component BC121D is
@@ -54,54 +53,24 @@ component BC121D is
 	);
 	
     port (
-			clk		: in   std_logic;
-			en		: in   std_logic;
+			clk				: in   	std_logic;
+			en				: in   	std_logic;
 
-			x0 		: in   std_logic_vector (15 downto 0);
-			x1 		: in   std_logic_vector (15 downto 0);
-			x2 		: in   std_logic_vector (15 downto 0);
-			x3 		: in   std_logic_vector (15 downto 0);
-			x4 		: in   std_logic_vector (15 downto 0);
-			x5 		: in   std_logic_vector (15 downto 0);
-			x6 		: in   std_logic_vector (15 downto 0);
-			x7 		: in   std_logic_vector (15 downto 0);
+			column_in 		: in 	dct_vector;
+			column_out 		: out 	dct_vector;
 
-			y0 		: out   std_logic_vector (15 downto 0);
-			y1 		: out   std_logic_vector (15 downto 0);
-			y2 		: out   std_logic_vector (15 downto 0);
-			y3 		: out   std_logic_vector (15 downto 0);
-			y4 		: out   std_logic_vector (15 downto 0);
-			y5 		: out   std_logic_vector (15 downto 0);
-			y6 		: out   std_logic_vector (15 downto 0);
-			y7 		: out   std_logic_vector (15 downto 0);
-
-			ready	: out 	std_logic
+			ready			: out 	std_logic
     );
 end component BC121D;
 
-	signal clk : std_logic := '0';
-	signal en : std_logic := '1';
-	signal ready : std_logic := '0';
+	signal clk 			: std_logic := '0';
+	signal en 			: std_logic := '1';
+	signal ready 		: std_logic := '0';
 
-	signal x0 : std_logic_vector (15 downto 0);
-	signal x1 : std_logic_vector (15 downto 0);
-	signal x2 : std_logic_vector (15 downto 0);
-	signal x3 : std_logic_vector (15 downto 0);
-	signal x4 : std_logic_vector (15 downto 0);
-	signal x5 : std_logic_vector (15 downto 0);
-	signal x6 : std_logic_vector (15 downto 0);
-	signal x7 : std_logic_vector (15 downto 0);
+	signal column_in 	: dct_vector;
+	signal column_out 	: dct_vector;
 
-	signal y0 : std_logic_vector (15 downto 0);
-	signal y1 : std_logic_vector (15 downto 0);
-	signal y2 : std_logic_vector (15 downto 0);
-	signal y3 : std_logic_vector (15 downto 0);
-	signal y4 : std_logic_vector (15 downto 0);
-	signal y5 : std_logic_vector (15 downto 0);
-	signal y6 : std_logic_vector (15 downto 0);
-	signal y7 : std_logic_vector (15 downto 0);
-
-	signal finished : std_logic := '0';
+	signal finished 	: std_logic := '0';
 	
 begin
 
@@ -147,6 +116,15 @@ begin
 --  -2;
 --  -4]
 
+	column_in(0) <= std_logic_vector(to_signed(131, 16));
+	column_in(1) <= std_logic_vector(to_signed(113, 16));
+	column_in(2) <= std_logic_vector(to_signed(116, 16));
+	column_in(3) <= std_logic_vector(to_signed(109, 16));
+	column_in(4) <= std_logic_vector(to_signed(105, 16));
+	column_in(5) <= std_logic_vector(to_signed(90, 16));
+	column_in(6) <= std_logic_vector(to_signed(95, 16));
+	column_in(7) <= std_logic_vector(to_signed(93, 16));
+
 
 
 	uut : BC121D
@@ -173,22 +151,8 @@ begin
 		port map (
 			clk => clk,
 			en => en,
-			x0 => x0,
-			x1 => x1,
-			x2 => x2,
-			x3 => x3,
-			x4 => x4,
-			x5 => x5,
-			x6 => x6,
-			x7 => x7,
-			y0 => y0,
-			y1 => y1,
-			y2 => y2,
-			y3 => y3,
-			y4 => y4,
-			y5 => y5,
-			y6 => y6,
-			y7 => y7,
+			column_in => column_in,
+			column_out => column_out,
 			ready => ready
 		);
 
@@ -199,48 +163,38 @@ begin
 	stim_proc: process
 	begin		
 
-		wait for 10 ns;	
-		x0 <= std_logic_vector(to_signed(131, 16));
-		x1 <= std_logic_vector(to_signed(113, 16));
-		x2 <= std_logic_vector(to_signed(116, 16));
-		x3 <= std_logic_vector(to_signed(109, 16));
-		x4 <= std_logic_vector(to_signed(105, 16));
-		x5 <= std_logic_vector(to_signed(90, 16));
-		x6 <= std_logic_vector(to_signed(95, 16));
-		x7 <= std_logic_vector(to_signed(93, 16));
-
 		wait for 600 ns; --FIXME: modificare questa condizione in wait for ready = 1
 	   
-		assert y0 = std_logic_vector(to_signed(852, 16)) 
-			report "Errore calcolo componente y0"
+		assert column_out(0) = std_logic_vector(to_signed(852, 16)) 
+			report "Errore calcolo componente 0"
 			severity error;
 		
-		assert y1 = std_logic_vector(to_signed(38, 16)) 
-			report "Errore calcolo componente y1"
+		assert column_out(1) = std_logic_vector(to_signed(38, 16)) 
+			report "Errore calcolo componente 1"
 			severity error;
 		
-		assert y2 = std_logic_vector(to_signed(10, 16)) 
-			report "Errore calcolo componente y2"
+		assert column_out(2) = std_logic_vector(to_signed(10, 16)) 
+			report "Errore calcolo componente 2"
 			severity error;
 		
-		assert y3 = std_logic_vector(to_signed(-26, 16)) 
-			report "Errore calcolo componente y3"
+		assert column_out(3) = std_logic_vector(to_signed(-26, 16)) 
+			report "Errore calcolo componente 3"
 			severity error;
 		
-		assert y4 = std_logic_vector(to_signed(24, 16)) 
-			report "Errore calcolo componente y4"
+		assert column_out(4) = std_logic_vector(to_signed(24, 16)) 
+			report "Errore calcolo componente 4"
 			severity error;
 		
-		assert y5 = std_logic_vector(to_signed(-18, 16)) 
-			report "Errore calcolo componente y5"
+		assert column_out(5) = std_logic_vector(to_signed(-18, 16)) 
+			report "Errore calcolo componente 5"
 			severity error;
 		
-		assert y6 = std_logic_vector(to_signed(-2, 16)) 
-			report "Errore calcolo componente y6"
+		assert column_out(6) = std_logic_vector(to_signed(-2, 16)) 
+			report "Errore calcolo componente 6"
 			severity error;
 		
-		assert y7 = std_logic_vector(to_signed(-4, 16)) 
-			report "Errore calcolo componente y7"
+		assert column_out(7) = std_logic_vector(to_signed(-4, 16)) 
+			report "Errore calcolo componente 7"
 			severity error;
 
 		report "Test del componente BC12-1D concluso." severity note;
