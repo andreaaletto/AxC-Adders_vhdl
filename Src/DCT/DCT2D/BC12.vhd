@@ -9,6 +9,7 @@ use work.ImageBlockType.all;
 
 entity BC12 is
 	generic (
+		isPipelined	: natural			:= 0;
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -62,6 +63,7 @@ architecture dataflow of BC12 is
 
 	component BC121D is
 		generic (
+			isPipelined	: natural			:= 0;
 			nab0		: natural 			:= 0;
 			cell_type0	: Inexact_cell_type := cell_AMA1; 
 			nab1		: natural 			:= 0;
@@ -110,21 +112,6 @@ architecture dataflow of BC12 is
 			ready			: out 	std_logic
 		);
 	end component;
-
-	component reg is
-		generic(
-			N : natural := 16
-		);
-		port 
-		(	
-			clk  : in std_logic;
-			rst	 : in std_logic;
-			data_in : in std_logic_vector (N-1 downto 0);
-			en : in std_logic;
-			data_out : out std_logic_vector (N-1 downto 0) 
-		);
-	end component;
-	for all : reg use entity work.GenericRegister;
 
 	signal row_transf_blk_in	:	dct_block;
 	signal row_transf_blk_out	:	dct_block;

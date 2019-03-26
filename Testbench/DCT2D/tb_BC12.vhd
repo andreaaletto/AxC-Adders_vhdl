@@ -13,6 +13,7 @@ architecture behavioral of tb_BC12 is
 
 component BC12 is
 	generic (
+		isPipelined	: natural			:= 0;
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -172,24 +173,25 @@ begin
 	-- unit under test
 	uut : BC12
 		generic map( 
-			nab0  => 0,
-			nab1  => 0,
-			nab2  => 0,
-			nab3  => 0,
-			nab4  => 0,
-			nab5  => 0,
-			nab6  => 0,
-			nab7  => 0,
-			nab8  => 0,
-			nab9  => 0,
-			nab10 => 0,
-			nab11 => 0,
-			nab12 => 0,
-			nab13 => 0,
-			nab14 => 0,
-			nab15 => 0,
-			nab16 => 0,
-			nab17 => 0
+			isPipelined => 0,
+			nab0  		=> 0,
+			nab1  		=> 0,
+			nab2  		=> 0,
+			nab3  		=> 0,
+			nab4  		=> 0,
+			nab5  		=> 0,
+			nab6  		=> 0,
+			nab7  		=> 0,
+			nab8  		=> 0,
+			nab9  		=> 0,
+			nab10 		=> 0,
+			nab11 		=> 0,
+			nab12 		=> 0,
+			nab13 		=> 0,
+			nab14 		=> 0,
+			nab15 		=> 0,
+			nab16 		=> 0,
+			nab17 		=> 0
 		)
 		port map (
 			clk => clk,
