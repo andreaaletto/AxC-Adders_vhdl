@@ -140,6 +140,7 @@ begin
 	row_transform_generate : for i in 0 to 7 generate
 		row_transform_inst: BC121D
 			generic map(
+				isPipelined 	=> isPipelined,
 				nab0 			=> nab0,
 				cell_type0 		=> cell_type0,
 				nab1 			=> nab1,
@@ -211,6 +212,7 @@ begin
 	column_transform_generate : for i in 0 to 7 generate
 		column_transform_inst: BC121D
 			generic map(
+				isPipelined 	=> isPipelined,
 				nab0 			=> nab0,
 				cell_type0 		=> cell_type0,
 				nab1 			=> nab1,

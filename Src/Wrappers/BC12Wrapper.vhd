@@ -36,6 +36,27 @@ use work.ImageBlockType.all;
 --use UNISIM.VComponents.all;
 
 entity BC12Wrapper is
+generic (
+		isPipelined	: natural			:= 0;
+		nab0		: natural 			:= 0;
+		nab1		: natural 			:= 0;
+		nab2		: natural 			:= 0;
+		nab3		: natural 			:= 0;
+		nab4		: natural 			:= 0;
+		nab5		: natural 			:= 0;
+		nab6		: natural 			:= 0;
+		nab7		: natural 			:= 0;
+		nab8		: natural 			:= 0;
+		nab9		: natural 			:= 0;
+		nab10		: natural 			:= 0;
+		nab11		: natural 			:= 0;
+		nab12		: natural 			:= 0;
+		nab13		: natural 			:= 0;
+		nab14		: natural 			:= 0;
+		nab15		: natural 			:= 0;
+		nab16		: natural 			:= 0;
+		nab17		: natural 			:= 0
+	);
     port (
 			clk		: in   std_logic;
 			en		: in   std_logic;
@@ -234,43 +255,43 @@ begin
 
     bc12_inst : BC12
         generic map(
-            isPipelined =>      0,
-            nab0 =>             0,
-            nab1 =>             0,
-            nab2 =>             0,
-            nab3 =>             0,
-            nab4 =>             0,
-            nab5 =>             0,
-            nab6 =>             0,
-            nab7 =>             0,
-            nab8 =>             0,
-            nab9 =>             0,
-            nab10 =>            0,
-            nab11 =>            0,
-            nab12 =>            0,
-            nab13 =>            0,
-            nab14 =>            0,
-            nab15 =>            0,
-            nab16 =>            0,
-            nab17 =>            0,
-            cell_type0 =>       cell_InAx1,
-            cell_type1 =>       cell_InAx1,
-            cell_type2 =>       cell_InAx1,
-            cell_type3 =>       cell_InAx1,
-            cell_type4 =>       cell_InAx1,
-            cell_type5 =>       cell_InAx1,
-            cell_type6 =>       cell_InAx1,
-            cell_type7 =>       cell_InAx1,
-            cell_type8 =>       cell_InAx1,
-            cell_type9 =>       cell_InAx1,
-            cell_type10 =>      cell_InAx1,
-            cell_type11 =>      cell_InAx1,
-            cell_type12 =>      cell_InAx1,
-            cell_type13 =>      cell_InAx1,
-            cell_type14 =>      cell_InAx1,
-            cell_type15 =>      cell_InAx1,
-            cell_type16 =>      cell_InAx1,
-            cell_type17 =>      cell_InAx1
+            isPipelined =>      isPipelined,
+            nab0 =>             nab0,
+            nab1 =>             nab1,
+            nab2 =>             nab2,
+            nab3 =>             nab3,
+            nab4 =>             nab4,
+            nab5 =>             nab5,
+            nab6 =>             nab6,
+            nab7 =>             nab7,
+            nab8 =>             nab8,
+            nab9 =>             nab9,
+            nab10 =>            nab10,
+            nab11 =>            nab11,
+            nab12 =>            nab12,
+            nab13 =>            nab13,
+            nab14 =>            nab14,
+            nab15 =>            nab15,
+            nab16 =>            nab16,
+            nab17 =>            nab17,
+            cell_type0 =>       cell_AMA1,
+            cell_type1 =>       cell_AMA1,
+            cell_type2 =>       cell_AMA1,
+            cell_type3 =>       cell_AMA1,
+            cell_type4 =>       cell_AMA1,
+            cell_type5 =>       cell_AMA1,
+            cell_type6 =>       cell_AMA1,
+            cell_type7 =>       cell_AMA1,
+            cell_type8 =>       cell_AMA1,
+            cell_type9 =>       cell_AMA1,
+            cell_type10 =>      cell_AMA1,
+            cell_type11 =>      cell_AMA1,
+            cell_type12 =>      cell_AMA1,
+            cell_type13 =>      cell_AMA1,
+            cell_type14 =>      cell_AMA1,
+            cell_type15 =>      cell_AMA1,
+            cell_type16 =>      cell_AMA1,
+            cell_type17 =>      cell_AMA1
         )
         port map(
             clk => clk,
