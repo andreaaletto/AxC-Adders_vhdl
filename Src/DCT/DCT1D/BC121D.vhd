@@ -48,19 +48,19 @@ entity BC121D is
 	);
 	
     port (
-			clk				: in   std_logic;
-			en				: in   std_logic;
+			clk				: in   	std_logic;
 
-			column_in 		: in dct_vector;
-			column_out 		: out dct_vector;
+			en				: in   	std_logic;
+			rst_n			: in 	std_logic;
 
-			ready			: out 	std_logic
+			column_in 		: in 	dct_vector;
+			column_out 		: out 	dct_vector
+
     );
 end BC121D;
 
 architecture dataflow of BC121D is
 
-	-- generic_adder_subtractor generico
 	component generic_adder_subtractor is
         generic (
                 nbits		: natural := 16;
@@ -91,14 +91,14 @@ architecture dataflow of BC121D is
 		);
 	end component;
 	
-	signal x0a	: std_logic_vector (15 downto 0);
-	signal x1a	: std_logic_vector (15 downto 0);
-	signal x2a	: std_logic_vector (15 downto 0);
-	signal x3a	: std_logic_vector (15 downto 0);
-	signal x4a	: std_logic_vector (15 downto 0);
-	signal x5a	: std_logic_vector (15 downto 0);
-	signal x6a	: std_logic_vector (15 downto 0);
-	signal x7a	: std_logic_vector (15 downto 0);
+	signal x0a		: std_logic_vector (15 downto 0);
+	signal x1a		: std_logic_vector (15 downto 0);
+	signal x2a		: std_logic_vector (15 downto 0);
+	signal x3a		: std_logic_vector (15 downto 0);
+	signal x4a		: std_logic_vector (15 downto 0);
+	signal x5a		: std_logic_vector (15 downto 0);
+	signal x6a		: std_logic_vector (15 downto 0);
+	signal x7a		: std_logic_vector (15 downto 0);
 
 	signal x0b_in	: std_logic_vector (15 downto 0);
 	signal x1b_in	: std_logic_vector (15 downto 0);
@@ -181,14 +181,14 @@ begin
 
 	-- Store results
 
-	reg_x0b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0b_in, data_out => x0b_out);
-	reg_x1b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1b_in, data_out => x1b_out);
-	reg_x2b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2b_in, data_out => x2b_out);
-	reg_x3b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3b_in, data_out => x3b_out);
-	reg_x4b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4b_in, data_out => x4b_out);
-	reg_x5b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5b_in, data_out => x5b_out);
-	reg_x6b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6b_in, data_out => x6b_out);
-	reg_x7b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7b_in, data_out => x7b_out);
+	reg_x0b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x0b_in, data_out => x0b_out);
+	reg_x1b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x1b_in, data_out => x1b_out);
+	reg_x2b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x2b_in, data_out => x2b_out);
+	reg_x3b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x3b_in, data_out => x3b_out);
+	reg_x4b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x4b_in, data_out => x4b_out);
+	reg_x5b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x5b_in, data_out => x5b_out);
+	reg_x6b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6b_in, data_out => x6b_out);
+	reg_x7b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7b_in, data_out => x7b_out);
 
 	-- BC12 Second step
 
@@ -203,14 +203,14 @@ begin
 
 	-- Store results
 
-	reg_x0c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0c_in, data_out => x0c_out);
-	reg_x1c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1c_in, data_out => x1c_out);
-	reg_x2c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2c_in, data_out => x2c_out);
-	reg_x3c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3c_in, data_out => x3c_out);
-	reg_x4c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4c_in, data_out => x4c_out);
-	reg_x5c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5c_in, data_out => x5c_out);
-	reg_x6c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6c_in, data_out => x6c_out);
-	reg_x7c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7c_in, data_out => x7c_out);
+	reg_x0c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x0c_in, data_out => x0c_out);
+	reg_x1c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x1c_in, data_out => x1c_out);
+	reg_x2c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x2c_in, data_out => x2c_out);
+	reg_x3c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x3c_in, data_out => x3c_out);
+	reg_x4c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x4c_in, data_out => x4c_out);
+	reg_x5c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x5c_in, data_out => x5c_out);
+	reg_x6c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6c_in, data_out => x6c_out);
+	reg_x7c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7c_in, data_out => x7c_out);
 	
 	-- BC12 Third step
 
@@ -225,14 +225,14 @@ begin
 
 	-- Store results
 
-	reg_x0d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0d_in, data_out => x0d_out);
-	reg_x1d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1d_in, data_out => x1d_out);
-	reg_x2d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2d_in, data_out => x2d_out);
-	reg_x3d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3d_in, data_out => x3d_out);
-	reg_x4d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4d_in, data_out => x4d_out);
-	reg_x5d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5d_in, data_out => x5d_out);
-	reg_x6d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6d_in, data_out => x6d_out);
-	reg_x7d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7d_in, data_out => x7d_out); 
+	reg_x0d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x0d_in, data_out => x0d_out);
+	reg_x1d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x1d_in, data_out => x1d_out);
+	reg_x2d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x2d_in, data_out => x2d_out);
+	reg_x3d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x3d_in, data_out => x3d_out);
+	reg_x4d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x4d_in, data_out => x4d_out);
+	reg_x5d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x5d_in, data_out => x5d_out);
+	reg_x6d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6d_in, data_out => x6d_out);
+	reg_x7d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7d_in, data_out => x7d_out); 
 
 	-- BC12 Permutation step
 

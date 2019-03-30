@@ -55,17 +55,16 @@ component BC121D is
     port (
 			clk				: in   	std_logic;
 			en				: in   	std_logic;
+			rst_n			: in   	std_logic;
 
 			column_in 		: in 	dct_vector;
-			column_out 		: out 	dct_vector;
-
-			ready			: out 	std_logic
+			column_out 		: out 	dct_vector
     );
 end component BC121D;
 
 	signal clk 			: std_logic := '0';
 	signal en 			: std_logic := '1';
-	signal ready 		: std_logic := '0';
+	signal rst_n		: std_logic := '1';
 
 	signal column_in 	: dct_vector;
 	signal column_out 	: dct_vector;
@@ -131,9 +130,9 @@ begin
 		port map (
 			clk => clk,
 			en => en,
+			rst_n => rst_n,
 			column_in => column_in,
-			column_out => column_out,
-			ready => ready
+			column_out => column_out
 		);
 
 	-- clock generator
@@ -143,7 +142,7 @@ begin
 	stim_proc: process
 	begin		
 
-		wait for 600 ns; --FIXME: modificare questa condizione in wait for ready = 1
+		wait for 30 ns; -- Il componente completa dopo 3 colpi di clock
 	   
 		assert column_out(0) = std_logic_vector(to_signed(852, 16)) 
 			report "Errore calcolo componente 0"

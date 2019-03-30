@@ -54,16 +54,16 @@ component BC12 is
     port (
 			clk		: in   std_logic;
 			en		: in   std_logic;
+			rst_n		: in   std_logic;
 
 			blk_in  : in	dct_block;
-			blk_out : out	dct_block;
-			
-			ready	: out 	std_logic
+			blk_out : out	dct_block
     );
 end component BC12;
 
 	signal clk 			: std_logic := '0';
 	signal en 			: std_logic := '1';
+	signal rst_n		: std_logic := '1';
 	signal ready 		: std_logic := '0';
 
 	signal blk_in 		: dct_block;
@@ -194,9 +194,9 @@ begin
 		port map (
 			clk => clk,
 			en => en,
+			rst_n => rst_n,
 			blk_in => blk_in,
-			blk_out => blk_out,
-			ready => ready
+			blk_out => blk_out
 		);
 
 	-- clock generator
@@ -208,7 +208,7 @@ begin
 		variable result : integer := 0; 
 	begin		
 
-		wait for 3600 ns; --FIXME: modificare questa condizione in wait for ready = 1
+		wait for 60 ns; -- Il componente completa dopo 6 colpi di clock
 
 		for i in 0 to 7 loop
 			for j in 0 to 7 loop

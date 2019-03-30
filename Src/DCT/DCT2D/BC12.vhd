@@ -49,12 +49,12 @@ entity BC12 is
 	
     port (
 			clk		: in   std_logic;
+
 			en		: in   std_logic;
+			rst_n	: in   std_logic;
 
 			blk_in  : in	dct_block;
-			blk_out : out	dct_block;
-			
-			ready	: out 	std_logic
+			blk_out : out	dct_block
     );
 end BC12;
 
@@ -102,12 +102,12 @@ architecture dataflow of BC12 is
 	
 		port (
 			clk				: in   	std_logic;
+
 			en				: in   	std_logic;
+			rst_n			: in   	std_logic;
 
 			column_in 		: in 	dct_vector;
-			column_out 		: out 	dct_vector;
-
-			ready			: out 	std_logic
+			column_out 		: out 	dct_vector
 		);
 	end component;
 
@@ -176,17 +176,15 @@ begin
 				cell_type17 	=> cell_type17
 			)
 			port map(
-				clk => clk,
-				en => en,
-
-				column_in => row_transf_blk_in(i),
-				column_out => row_transf_blk_out(i),
-
-				ready => open
+				clk 		=> clk,
+				en 			=> en,
+				rst_n 		=> rst_n,
+				column_in 	=> row_transf_blk_in(i),
+				column_out 	=> row_transf_blk_out(i)
 			);
 	end generate;
 
-	
+	--
 
 	-- DCT1D transposition 
 	transp_blk_in <= row_transf_blk_out;
@@ -247,13 +245,11 @@ begin
 				cell_type17 	=> cell_type17
 			)
 			port map(
-				clk => clk,
-				en => en,
-
-				column_in => col_transf_blk_in(i),
-				column_out => col_transf_blk_out(i),
-
-				ready => open
+				clk 		=> clk,
+				en 			=> en,
+				rst_n 		=> rst_n,
+				column_in 	=> col_transf_blk_in(i),
+				column_out 	=> col_transf_blk_out(i)
 			);
 	end generate;
 
