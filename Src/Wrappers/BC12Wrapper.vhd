@@ -37,7 +37,6 @@ use work.ImageBlockType.all;
 
 entity BC12Wrapper is
 generic (
-		isPipelined	: natural			:= 0;
 		nab0		: natural 			:= 0;
 		nab1		: natural 			:= 0;
 		nab2		: natural 			:= 0;
@@ -199,7 +198,6 @@ architecture Behavioral of BC12Wrapper is
 
 component BC12 is
 	generic (
-		isPipelined	: natural			:= 0;
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -255,7 +253,6 @@ begin
 
     bc12_inst : BC12
         generic map(
-            isPipelined =>      isPipelined,
             nab0 =>             nab0,
             nab1 =>             nab1,
             nab2 =>             nab2,

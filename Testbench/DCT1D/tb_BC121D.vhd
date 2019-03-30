@@ -13,7 +13,6 @@ architecture behavioral of tb_BC121D is
 
 component BC121D is
 	generic (
-		isPipelined	: natural			:= 0;
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -110,7 +109,6 @@ begin
 
 	uut : BC121D
 		generic map( 
-			isPipelined => 0,
 			nab0  		=> 0,
 			nab1  		=> 0,
 			nab2  		=> 0,

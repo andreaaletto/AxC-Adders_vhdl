@@ -8,7 +8,6 @@ use work.ImageBlockType.all;
 
 entity BC121D is
 	generic (
-			isPipelined	: natural			:= 0;
 			nab0		: natural 			:= 0;
 			cell_type0	: Inexact_cell_type := cell_AMA1; 
 			nab1		: natural 			:= 0;
@@ -161,7 +160,7 @@ architecture dataflow of BC121D is
 
 begin
 
-	-- Extend input to 16 bit
+	-- Expand column to 8 different signals
 
 	x0a <= column_in(0);
 	x1a <= column_in(1);
@@ -183,28 +182,16 @@ begin
 	sub_1a6a_inst : adder generic map (nab => nab6, cell_type => cell_type6) port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '1', sum => x6b_in);
 	sub_0a7a_inst : adder generic map (nab => nab7, cell_type => cell_type7) port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '1', sum => x7b_in);
 
-	PipeliningStep1: if isPipelined=1 generate
-		reg_x0b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0b_in, data_out => x0b_out);
-		reg_x1b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1b_in, data_out => x1b_out);
-		reg_x2b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2b_in, data_out => x2b_out);
-		reg_x3b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3b_in, data_out => x3b_out);
-		reg_x4b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4b_in, data_out => x4b_out);
-		reg_x5b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5b_in, data_out => x5b_out);
-		reg_x6b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6b_in, data_out => x6b_out);
-		reg_x7b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7b_in, data_out => x7b_out);
-	end generate PipeliningStep1;
-	
-	WiringStep1: if isPipelined=0 generate
-		wiring_x0b: x0b_out <= x0b_in;
-		wiring_x1b: x1b_out <= x1b_in;
-		wiring_x2b: x2b_out <= x2b_in;
-		wiring_x3b: x3b_out <= x3b_in;
-		wiring_x4b: x4b_out <= x4b_in;
-		wiring_x5b: x5b_out <= x5b_in;
-		wiring_x6b: x6b_out <= x6b_in;
-		wiring_x7b: x7b_out <= x7b_in;
-		
-	end generate WiringStep1; 
+	-- Store results
+
+	reg_x0b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0b_in, data_out => x0b_out);
+	reg_x1b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1b_in, data_out => x1b_out);
+	reg_x2b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2b_in, data_out => x2b_out);
+	reg_x3b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3b_in, data_out => x3b_out);
+	reg_x4b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4b_in, data_out => x4b_out);
+	reg_x5b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5b_in, data_out => x5b_out);
+	reg_x6b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6b_in, data_out => x6b_out);
+	reg_x7b_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7b_in, data_out => x7b_out);
 
 	-- BC12 Second step
 
@@ -217,29 +204,17 @@ begin
 	inv_6b		  : adder generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => "0000000000000000", add_2 => x6b_out, sub_add_n => '1', sum => x6c_in);
 	x7c_in <= x7b_out;
 
-	PipeliningStep2: if isPipelined=1 generate
-		reg_x0c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0c_in, data_out => x0c_out);
-		reg_x1c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1c_in, data_out => x1c_out);
-		reg_x2c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2c_in, data_out => x2c_out);
-		reg_x3c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3c_in, data_out => x3c_out);
-		reg_x4c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4c_in, data_out => x4c_out);
-		reg_x5c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5c_in, data_out => x5c_out);
-		reg_x6c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6c_in, data_out => x6c_out);
-		reg_x7c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7c_in, data_out => x7c_out);
-	end generate PipeliningStep2;
-	
-	WiringStep2: if isPipelined=0 generate
-		wiring_x0c: x0c_out <= x0c_in;
-		wiring_x1c: x1c_out <= x1c_in;
-		wiring_x2c: x2c_out <= x2c_in;
-		wiring_x3c: x3c_out <= x3c_in;
-		wiring_x4c: x4c_out <= x4c_in;
-		wiring_x5c: x5c_out <= x5c_in;
-		wiring_x6c: x6c_out <= x6c_in;
-		wiring_x7c: x7c_out <= x7c_in;
-		
-	end generate WiringStep2; 
+	-- Store results
 
+	reg_x0c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0c_in, data_out => x0c_out);
+	reg_x1c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1c_in, data_out => x1c_out);
+	reg_x2c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2c_in, data_out => x2c_out);
+	reg_x3c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3c_in, data_out => x3c_out);
+	reg_x4c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4c_in, data_out => x4c_out);
+	reg_x5c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5c_in, data_out => x5c_out);
+	reg_x6c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6c_in, data_out => x6c_out);
+	reg_x7c_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7c_in, data_out => x7c_out);
+	
 	-- BC12 Third step
 
 	sum_0c1c_inst : adder generic map (nab => nab15, cell_type => cell_type15) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d_in);
@@ -251,28 +226,16 @@ begin
 	x6d_in <= x6c_out;
 	x7d_in <= x7c_out;
 
-	PipeliningStep3: if isPipelined=1 generate
-		reg_x0d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0d_in, data_out => x0d_out);
-		reg_x1d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1d_in, data_out => x1d_out);
-		reg_x2d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2d_in, data_out => x2d_out);
-		reg_x3d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3d_in, data_out => x3d_out);
-		reg_x4d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4d_in, data_out => x4d_out);
-		reg_x5d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5d_in, data_out => x5d_out);
-		reg_x6d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6d_in, data_out => x6d_out);
-		reg_x7d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7d_in, data_out => x7d_out);
-	end generate PipeliningStep3;
-	
-	WiringStep3: if isPipelined=0 generate
-		wiring_x0d: x0d_out <= x0d_in;
-		wiring_x1d: x1d_out <= x1d_in;
-		wiring_x2d: x2d_out <= x2d_in;
-		wiring_x3d: x3d_out <= x3d_in;
-		wiring_x4d: x4d_out <= x4d_in;
-		wiring_x5d: x5d_out <= x5d_in;
-		wiring_x6d: x6d_out <= x6d_in;
-		wiring_x7d: x7d_out <= x7d_in;
-		
-	end generate WiringStep3; 
+	-- Store results
+
+	reg_x0d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x0d_in, data_out => x0d_out);
+	reg_x1d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x1d_in, data_out => x1d_out);
+	reg_x2d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x2d_in, data_out => x2d_out);
+	reg_x3d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x3d_in, data_out => x3d_out);
+	reg_x4d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x4d_in, data_out => x4d_out);
+	reg_x5d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x5d_in, data_out => x5d_out);
+	reg_x6d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x6d_in, data_out => x6d_out);
+	reg_x7d_inst : GenericRegister port map( clk => clk, rst => '1', en => en, data_in => x7d_in, data_out => x7d_out); 
 
 	-- BC12 Permutation step
 
@@ -284,9 +247,6 @@ begin
 	column_out(5) <= x6d_out;
 	column_out(6) <= x2d_out;
 	column_out(7) <= x4d_out;
-
-	--TODO: se xid_out(15 downto 8) è diverso da "00000000" c'è un errore di troncamento
-	--TODO: impostare l'output ready a 1 quando il processo di trasformazione è terminato
 
 end dataflow;
 
