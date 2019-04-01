@@ -1,17 +1,17 @@
---! @file FullAdder.vhd
+--! @file InAx2.vhd
 --!
---! @author	Salvatore Barone <salvatore.barone@unina.it>
+--! @author	Andrea Aletto <andrea.aletto8@gmail.com>
 --! 
 --! @copyright
---! Copyright 2017-2019	Salvatore Barone <salvatore.barone@unina.it>
+--! Copyright 2017-2019	Andrea Aletto <andrea.aletto8@gmail.com>
 --! 
---! This file is part of ReedMuller
+--! This file is part of AxC-Adders_vhdl
 --! 
---! ReedMuller is free software; you can redistribute it and/or modify it under
+--! AxC-Adders_vhdl is free software; you can redistribute it and/or modify it under
 --! the terms of the GNU General Public License as published by the Free
 --! Software Foundation; either version 3 of the License, or any later version.
 --! 
---! ReedMuller is distributed in the hope that it will be useful, but WITHOUT
+--! AxC-Adders_vhdl is distributed in the hope that it will be useful, but WITHOUT
 --! ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
 --! FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
 --! more details.
@@ -20,23 +20,10 @@
 --! RMEncoder; if not, write to the Free Software Foundation, Inc., 51 Franklin
 --! Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
--- Changelog
--- 17-04-2017: creazione del file e prima implementazione
--- 01-10-2018: Documentazione del codice e test esaustivo
 
 library ieee;
 use ieee.std_logic_1164.all;
 
---! @ingroup MajorityVoter
---! @{
---! @defgroup AMA1 AMA1
---! @{
---! @brief Addizionatore AMA1 ad 1 bit
---!
---! Il componente esegue la somma di due numeri espressi in binario, con
---! lunghezza di un bit.
-
---! @brief Interfaccia di un sommatore ad un bit.
 entity InAx2 is
     port 
     (	
@@ -64,5 +51,3 @@ begin
 
 end architecture;
 
---! @}
---! @}

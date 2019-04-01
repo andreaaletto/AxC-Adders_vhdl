@@ -1,17 +1,17 @@
 --! @file tb_InAx2.vhd
 --!
---! @author	Salvatore Barone <salvatore.barone@unina.it>
+--! @author	Andrea Aletto <andrea.aletto8@gmail.com>
 --! 
 --! @copyright
---! Copyright 2017-2019	Salvatore Barone <salvatore.barone@unina.it>
+--! Copyright 2017-2019	Andrea Aletto <andrea.aletto8@gmail.com>
 --! 
---! This file is part of ReedMuller
+--! This file is part of AxC-Adders_vhdl
 --! 
---! ReedMuller is free software; you can redistribute it and/or modify it under
+--! AxC-Adders_vhdl is free software; you can redistribute it and/or modify it under
 --! the terms of the GNU General Public License as published by the Free
 --! Software Foundation; either version 3 of the License, or any later version.
 --! 
---! ReedMuller is distributed in the hope that it will be useful, but WITHOUT
+--! AxC-Adders_vhdl is distributed in the hope that it will be useful, but WITHOUT
 --! ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
 --! FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
 --! more details.
@@ -19,9 +19,6 @@
 --! You should have received a copy of the GNU General Public License along with
 --! RMEncoder; if not, write to the Free Software Foundation, Inc., 51 Franklin
 --! Street, Fifth Floor, Boston, MA 02110-1301, USA.
-
--- Changelog
--- 01-10-2018 :  Creazione e prima implementazione
 
 library ieee;
 use ieee.std_logic_1164.all;

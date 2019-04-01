@@ -1,3 +1,25 @@
+--! @file generic_adder_subtractor.vhd
+--!
+--! @author	Andrea Aletto <andrea.aletto8@gmail.com>
+--! 
+--! @copyright
+--! Copyright 2017-2019	Andrea Aletto <andrea.aletto8@gmail.com>
+--! 
+--! This file is part of AxC-Adders_vhdl
+--! 
+--! AxC-Adders_vhdl is free software; you can redistribute it and/or modify it under
+--! the terms of the GNU General Public License as published by the Free
+--! Software Foundation; either version 3 of the License, or any later version.
+--! 
+--! AxC-Adders_vhdl is distributed in the hope that it will be useful, but WITHOUT
+--! ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+--! FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+--! more details.
+--! 
+--! You should have received a copy of the GNU General Public License along with
+--! RMEncoder; if not, write to the Free Software Foundation, Inc., 51 Franklin
+--! Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -25,7 +47,7 @@ end generic_adder_subtractor;
 architecture structural of generic_adder_subtractor is
 
 	-- adder generico
-	component generic_adder is
+	component RippleCarry is
 		generic (
 				nbits		: natural := 16;
 				nab			: natural := 0;
@@ -40,9 +62,6 @@ architecture structural of generic_adder_subtractor is
 				sum 		: out  std_logic_vector (nbits-1 downto 0)
 		);
 	end component;
-	
-	-- ##### cambiare la seguente per cambiare il sommatore usato
-	for all : generic_adder use entity work.RippleCarry;
 
 	-- segnali di uscita dall'invertitore xor
 	signal xorinv_out : std_logic_vector (nbits-1 downto 0);
@@ -55,7 +74,7 @@ begin
 	with sub_add_n select
 	xorinv_out <= add_2 when '0', (not add_2) when others;
 
-	g_adder : generic_adder
+	g_adder : RippleCarry
 		generic map (nbits, nab, cell_type)
 		port map (add_1, xorinv_out, sub_add_n, carry, sum_tmp);
 				
