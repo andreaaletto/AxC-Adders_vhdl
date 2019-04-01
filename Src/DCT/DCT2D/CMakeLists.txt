@@ -3,3 +3,6 @@ add_dependencies(BC12 BC121D)
 
 add_vhdl_source(CB11.vhd CB11)
 add_dependencies(CB11 CB111D)
+
+add_vhdl_source(BAS11.vhd BAS11)
+add_dependencies(BAS11 BAS111D)
