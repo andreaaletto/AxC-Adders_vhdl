@@ -59,6 +59,7 @@ generic (
     port (
 			clk		: in   std_logic;
 			en		: in   std_logic;
+			rst_n		: in   std_logic;
 
 			x00 : in std_logic_vector( 15 downto 0);
             x01 : in std_logic_vector( 15 downto 0);
@@ -188,9 +189,7 @@ generic (
             y74 : out std_logic_vector( 15 downto 0);
             y75 : out std_logic_vector( 15 downto 0);
             y76 : out std_logic_vector( 15 downto 0);
-            y77 : out std_logic_vector( 15 downto 0);
-			
-			ready	: out 	std_logic
+            y77 : out std_logic_vector( 15 downto 0)
     );
 end BC12Wrapper;
 
@@ -238,11 +237,10 @@ component BC12 is
     port (
 			clk		: in   std_logic;
 			en		: in   std_logic;
+			rst_n	: in   std_logic;
 
 			blk_in  : in	dct_block;
-			blk_out : out	dct_block;
-			
-			ready	: out 	std_logic
+			blk_out : out	dct_block
     );
 end component;
 
@@ -293,9 +291,9 @@ begin
         port map(
             clk => clk,
             en => en,
+            rst_n => rst_n,
             blk_in => blk_in,
-            blk_out => blk_out,
-            ready => ready
+            blk_out => blk_out
     );
 
     blk_in(0)(0) <= x00;
