@@ -38,15 +38,17 @@ entity GenericRegister is
 end GenericRegister;
 
 architecture GenericRegister of GenericRegister is
+    signal tmp : std_logic_vector(N-1 downto 0) := (others => '0');
 begin
 
-	process(clk, rst)
+    data_out <= tmp;
+	process(clk, rst, data_in, en)
     begin
         if rst = '0' then
-            data_out <= (others => '0');
+            tmp <= (others => '0');
         elsif rising_edge(clk) then
             if en = '1' then
-                data_out <= data_in;
+                tmp <= data_in;
             end if;
         end if;
     end process;

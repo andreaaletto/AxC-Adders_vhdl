@@ -276,8 +276,7 @@ begin
             cell_type13 =>      cell_AMA1,
             cell_type14 =>      cell_AMA1,
             cell_type15 =>      cell_AMA1,
-            cell_type16 =>      cell_AMA1,
-            cell_type17 =>      cell_AMA1
+            cell_type16 =>      cell_AMA1
         )
         port map(
             clk => clk,
