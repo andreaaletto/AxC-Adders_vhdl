@@ -3,6 +3,24 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "nab0" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab1" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab2" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab17" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab16" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab15" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab14" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab13" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab12" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab11" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab10" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab9" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab8" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab7" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab6" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab5" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab4" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "nab3" -parent ${Page_0}
   set C_S00_AXI_DATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0} -widget comboBox]
   set_property tooltip {Width of S_AXI data bus} ${C_S00_AXI_DATA_WIDTH}
   set C_S00_AXI_ADDR_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}]
@@ -10,24 +28,6 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
 
-  ipgui::add_param $IPINST -name "nab0"
-  ipgui::add_param $IPINST -name "nab1"
-  ipgui::add_param $IPINST -name "nab2"
-  ipgui::add_param $IPINST -name "nab3"
-  ipgui::add_param $IPINST -name "nab4"
-  ipgui::add_param $IPINST -name "nab5"
-  ipgui::add_param $IPINST -name "nab6"
-  ipgui::add_param $IPINST -name "nab7"
-  ipgui::add_param $IPINST -name "nab8"
-  ipgui::add_param $IPINST -name "nab9"
-  ipgui::add_param $IPINST -name "nab10"
-  ipgui::add_param $IPINST -name "nab11"
-  ipgui::add_param $IPINST -name "nab12"
-  ipgui::add_param $IPINST -name "nab13"
-  ipgui::add_param $IPINST -name "nab14"
-  ipgui::add_param $IPINST -name "nab15"
-  ipgui::add_param $IPINST -name "nab16"
-  ipgui::add_param $IPINST -name "nab17"
 
 }
 

@@ -10,9 +10,10 @@ vlib questa_lib/msim/processing_system7_vip_v1_0_6
 vlib questa_lib/msim/lib_cdc_v1_0_2
 vlib questa_lib/msim/proc_sys_reset_v5_0_13
 vlib questa_lib/msim/generic_baseblocks_v2_1_0
+vlib questa_lib/msim/axi_register_slice_v2_1_18
 vlib questa_lib/msim/fifo_generator_v13_2_3
 vlib questa_lib/msim/axi_data_fifo_v2_1_17
-vlib questa_lib/msim/axi_register_slice_v2_1_18
+vlib questa_lib/msim/axi_crossbar_v2_1_19
 vlib questa_lib/msim/axi_protocol_converter_v2_1_18
 
 vmap xilinx_vip questa_lib/msim/xilinx_vip
@@ -24,9 +25,10 @@ vmap processing_system7_vip_v1_0_6 questa_lib/msim/processing_system7_vip_v1_0_6
 vmap lib_cdc_v1_0_2 questa_lib/msim/lib_cdc_v1_0_2
 vmap proc_sys_reset_v5_0_13 questa_lib/msim/proc_sys_reset_v5_0_13
 vmap generic_baseblocks_v2_1_0 questa_lib/msim/generic_baseblocks_v2_1_0
+vmap axi_register_slice_v2_1_18 questa_lib/msim/axi_register_slice_v2_1_18
 vmap fifo_generator_v13_2_3 questa_lib/msim/fifo_generator_v13_2_3
 vmap axi_data_fifo_v2_1_17 questa_lib/msim/axi_data_fifo_v2_1_17
-vmap axi_register_slice_v2_1_18 questa_lib/msim/axi_register_slice_v2_1_18
+vmap axi_crossbar_v2_1_19 questa_lib/msim/axi_crossbar_v2_1_19
 vmap axi_protocol_converter_v2_1_18 questa_lib/msim/axi_protocol_converter_v2_1_18
 
 vlog -work xilinx_vip -64 -sv -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
@@ -67,30 +69,12 @@ vcom -work proc_sys_reset_v5_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
-"../../../bd/design_1/src_links/AMA1.vhd" \
-"../../../bd/design_1/src_links/AMA2.vhd" \
-"../../../bd/design_1/src_links/AMA3.vhd" \
-"../../../bd/design_1/src_links/AMA4.vhd" \
-"../../../bd/design_1/src_links/AXA1.vhd" \
-"../../../bd/design_1/src_links/AXA2.vhd" \
-"../../../bd/design_1/src_links/AXA3.vhd" \
-"../../../bd/design_1/src_links/Packages.vhd" \
-"../../../bd/design_1/src_links/CB11.vhd" \
-"../../../bd/design_1/src_links/CB111D.vhd" \
-"../../../bd/design_1/src_links/CB11Wrapper.vhd" \
-"../../../bd/design_1/ipshared/2524/hdl/CB11_axi_v1_0_S00_AXI.vhd" \
-"../../../bd/design_1/src_links/FullAdder.vhd" \
-"../../../bd/design_1/src_links/GenericRegister.vhd" \
-"../../../bd/design_1/src_links/InAx1.vhd" \
-"../../../bd/design_1/src_links/InAx2.vhd" \
-"../../../bd/design_1/src_links/InAx3.vhd" \
-"../../../bd/design_1/src_links/RippleCarry.vhd" \
-"../../../bd/design_1/src_links/generic_adder_subtractor.vhd" \
-"../../../bd/design_1/ipshared/2524/hdl/CB11_axi_v1_0.vhd" \
-"../../../bd/design_1/ip/design_1_CB11_axi_0_0/sim/design_1_CB11_axi_0_0.vhd" \
 
 vlog -work generic_baseblocks_v2_1_0 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+
+vlog -work axi_register_slice_v2_1_18 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v" \
 
 vlog -work fifo_generator_v13_2_3 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/64f4/simulation/fifo_generator_vlog_beh.v" \
@@ -104,8 +88,34 @@ vlog -work fifo_generator_v13_2_3 -64 "+incdir+../../../../axdct_project.srcs/so
 vlog -work axi_data_fifo_v2_1_17 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
 
-vlog -work axi_register_slice_v2_1_18 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
-"../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+vlog -work axi_crossbar_v2_1_19 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/design_1/src_links/AMA1.vhd" \
+"../../../bd/design_1/src_links/AMA2.vhd" \
+"../../../bd/design_1/src_links/AMA3.vhd" \
+"../../../bd/design_1/src_links/AMA4.vhd" \
+"../../../bd/design_1/src_links/AXA1.vhd" \
+"../../../bd/design_1/src_links/AXA2.vhd" \
+"../../../bd/design_1/src_links/AXA3.vhd" \
+"../../../bd/design_1/src_links/Packages.vhd" \
+"../../../bd/design_1/src_links/BC12.vhd" \
+"../../../bd/design_1/src_links/BC121D.vhd" \
+"../../../bd/design_1/src_links/BC12Wrapper.vhd" \
+"../../../bd/design_1/ipshared/698b/hdl/BC12_axi_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/src_links/FullAdder.vhd" \
+"../../../bd/design_1/src_links/GenericRegister.vhd" \
+"../../../bd/design_1/src_links/InAx1.vhd" \
+"../../../bd/design_1/src_links/InAx2.vhd" \
+"../../../bd/design_1/src_links/InAx3.vhd" \
+"../../../bd/design_1/src_links/RippleCarry.vhd" \
+"../../../bd/design_1/src_links/generic_adder_subtractor.vhd" \
+"../../../bd/design_1/ipshared/698b/hdl/BC12_axi_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_BC12_axi_0_0/sim/design_1_BC12_axi_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_18 -64 "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" "+incdir+../../../../axdct_project.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/home/andrea/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/7a04/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

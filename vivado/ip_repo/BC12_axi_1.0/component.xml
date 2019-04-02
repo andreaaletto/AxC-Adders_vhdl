@@ -199,7 +199,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>35f195fb</spirit:value>
+            <spirit:value>26ad4b5c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>35f195fb</spirit:value>
+            <spirit:value>26ad4b5c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -310,7 +310,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c126b71e</spirit:value>
+            <spirit:value>22fe7977</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -656,92 +656,92 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab0</spirit:name>
         <spirit:displayName>Nab0</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab0" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab0" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab1</spirit:name>
         <spirit:displayName>Nab1</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab1" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab1" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab2</spirit:name>
         <spirit:displayName>Nab2</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab2" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab2" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab3</spirit:name>
         <spirit:displayName>Nab3</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab3" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab3" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab4</spirit:name>
         <spirit:displayName>Nab4</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab4" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab4" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab5</spirit:name>
         <spirit:displayName>Nab5</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab5" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab5" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab6</spirit:name>
         <spirit:displayName>Nab6</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab6" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab6" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab7</spirit:name>
         <spirit:displayName>Nab7</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab7" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab7" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab8</spirit:name>
         <spirit:displayName>Nab8</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab8" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab8" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab9</spirit:name>
         <spirit:displayName>Nab9</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab9" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab9" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab10</spirit:name>
         <spirit:displayName>Nab10</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab10" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab10" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab11</spirit:name>
         <spirit:displayName>Nab11</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab11" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab11" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab12</spirit:name>
         <spirit:displayName>Nab12</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab12" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab12" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab13</spirit:name>
         <spirit:displayName>Nab13</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab13" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab13" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab14</spirit:name>
         <spirit:displayName>Nab14</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab14" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab14" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab15</spirit:name>
         <spirit:displayName>Nab15</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab15" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab15" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab16</spirit:name>
         <spirit:displayName>Nab16</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab16" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab16" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>nab17</spirit:name>
         <spirit:displayName>Nab17</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab17" spirit:minimum="0">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.nab17" spirit:minimum="0" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -751,7 +751,7 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -966,7 +966,7 @@
       <spirit:file>
         <spirit:name>xgui/BC12_axi_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_c126b71e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_22fe7977</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1134,11 +1134,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>BC12_axi_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:BC12_axi:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2019-04-02T10:20:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-04-02T12:56:00Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6eed8b38_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1cefbded_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
@@ -1189,15 +1189,26 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@76625e5a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1dcf5cea_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@506ae34d_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ad80da2_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f72c36f_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@179c8907_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c26620b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66f45026_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17dc01a8_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bcd8829_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f95c2e5_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1588f684_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c6ad953_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ad472b1_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b301db6b"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b308c363"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c5563875"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="19309fb0"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="fb8b22dc"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="8b1acb60"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="efe6080d"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b020dd05"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

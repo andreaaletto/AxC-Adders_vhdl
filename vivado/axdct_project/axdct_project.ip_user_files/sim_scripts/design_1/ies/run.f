@@ -36,30 +36,12 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
-  "../../../bd/design_1/src_links/AMA1.vhd" \
-  "../../../bd/design_1/src_links/AMA2.vhd" \
-  "../../../bd/design_1/src_links/AMA3.vhd" \
-  "../../../bd/design_1/src_links/AMA4.vhd" \
-  "../../../bd/design_1/src_links/AXA1.vhd" \
-  "../../../bd/design_1/src_links/AXA2.vhd" \
-  "../../../bd/design_1/src_links/AXA3.vhd" \
-  "../../../bd/design_1/src_links/Packages.vhd" \
-  "../../../bd/design_1/src_links/CB11.vhd" \
-  "../../../bd/design_1/src_links/CB111D.vhd" \
-  "../../../bd/design_1/src_links/CB11Wrapper.vhd" \
-  "../../../bd/design_1/ipshared/2524/hdl/CB11_axi_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/src_links/FullAdder.vhd" \
-  "../../../bd/design_1/src_links/GenericRegister.vhd" \
-  "../../../bd/design_1/src_links/InAx1.vhd" \
-  "../../../bd/design_1/src_links/InAx2.vhd" \
-  "../../../bd/design_1/src_links/InAx3.vhd" \
-  "../../../bd/design_1/src_links/RippleCarry.vhd" \
-  "../../../bd/design_1/src_links/generic_adder_subtractor.vhd" \
-  "../../../bd/design_1/ipshared/2524/hdl/CB11_axi_v1_0.vhd" \
-  "../../../bd/design_1/ip/design_1_CB11_axi_0_0/sim/design_1_CB11_axi_0_0.vhd" \
 -endlib
 -makelib ies_lib/generic_baseblocks_v2_1_0 \
   "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_register_slice_v2_1_18 \
+  "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/fifo_generator_v13_2_3 \
   "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/64f4/simulation/fifo_generator_vlog_beh.v" \
@@ -73,8 +55,34 @@
 -makelib ies_lib/axi_data_fifo_v2_1_17 \
   "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
 -endlib
--makelib ies_lib/axi_register_slice_v2_1_18 \
-  "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-makelib ies_lib/axi_crossbar_v2_1_19 \
+  "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/src_links/AMA1.vhd" \
+  "../../../bd/design_1/src_links/AMA2.vhd" \
+  "../../../bd/design_1/src_links/AMA3.vhd" \
+  "../../../bd/design_1/src_links/AMA4.vhd" \
+  "../../../bd/design_1/src_links/AXA1.vhd" \
+  "../../../bd/design_1/src_links/AXA2.vhd" \
+  "../../../bd/design_1/src_links/AXA3.vhd" \
+  "../../../bd/design_1/src_links/Packages.vhd" \
+  "../../../bd/design_1/src_links/BC12.vhd" \
+  "../../../bd/design_1/src_links/BC121D.vhd" \
+  "../../../bd/design_1/src_links/BC12Wrapper.vhd" \
+  "../../../bd/design_1/ipshared/698b/hdl/BC12_axi_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/src_links/FullAdder.vhd" \
+  "../../../bd/design_1/src_links/GenericRegister.vhd" \
+  "../../../bd/design_1/src_links/InAx1.vhd" \
+  "../../../bd/design_1/src_links/InAx2.vhd" \
+  "../../../bd/design_1/src_links/InAx3.vhd" \
+  "../../../bd/design_1/src_links/RippleCarry.vhd" \
+  "../../../bd/design_1/src_links/generic_adder_subtractor.vhd" \
+  "../../../bd/design_1/ipshared/698b/hdl/BC12_axi_v1_0.vhd" \
+  "../../../bd/design_1/ip/design_1_BC12_axi_0_0/sim/design_1_BC12_axi_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_18 \
   "../../../../axdct_project.srcs/sources_1/bd/design_1/ipshared/7a04/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
