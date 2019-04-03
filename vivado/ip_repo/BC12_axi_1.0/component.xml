@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>26ad4b5c</spirit:value>
+            <spirit:value>2d0c5591</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>26ad4b5c</spirit:value>
+            <spirit:value>2d0c5591</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1134,11 +1134,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>BC12_axi_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreRevision>8</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:BC12_axi:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2019-04-02T12:56:00Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-04-03T09:04:14Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6eed8b38_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1cefbded_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
@@ -1200,13 +1200,69 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1588f684_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7c6ad953_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2ad472b1_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31bccb19_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44e9fb5b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fb936d0_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fe1cf1b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4933215d_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25d2c0b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38475b80_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6465a97b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69b1930d_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@376c6d5a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@311b6f10_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55620b8f_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@774f31a3_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a832aa6_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bd68789_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10030b2d_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@409336b8_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cf39d9a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26d38e1e_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e225618_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e395209_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62aac1bb_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@159e9edd_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cd68c7c_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28ee7258_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1178ce19_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2240d3be_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@699bd68c_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a9e3ddd_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54580d1c_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bfe3a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b8f4c2b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4600b454_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3041e1db_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c1eddf_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cbe170b_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a311515_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cbf9b8e_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ccc6e6d_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@734a5013_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@674e12df_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@283e157a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b6cd3f6_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43bcf2a0_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@639f27c0_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4573673_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6285f636_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@354094fe_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aecddf3_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@263ac2c8_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cfccb94_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a0d104a_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f29d867_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54483add_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@305e1a61_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c714573_ARCHIVE_LOCATION">/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b308c363"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="19309fb0"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ab896561"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="fb8b22dc"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="efe6080d"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b020dd05"/>

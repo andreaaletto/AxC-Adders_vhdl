@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Tue Apr  2 14:56:47 2019
---Host        : ubuntu running 64-bit Ubuntu 18.04.2 LTS
+--Date        : Wed Apr  3 11:04:44 2019
+--Host        : andrea running 64-bit Deepin 15.9.3
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -33,19 +33,14 @@ entity design_1_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    btns_4bits_tri_io : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end design_1_wrapper;
 
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -60,10 +55,71 @@ architecture STRUCTURE of design_1_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    btns_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    btns_4bits_tri_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    btns_4bits_tri_t : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal btns_4bits_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal btns_4bits_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal btns_4bits_tri_i_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal btns_4bits_tri_i_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal btns_4bits_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal btns_4bits_tri_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal btns_4bits_tri_io_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal btns_4bits_tri_io_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal btns_4bits_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal btns_4bits_tri_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal btns_4bits_tri_o_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal btns_4bits_tri_o_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal btns_4bits_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal btns_4bits_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal btns_4bits_tri_t_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal btns_4bits_tri_t_3 : STD_LOGIC_VECTOR ( 3 to 3 );
 begin
+btns_4bits_tri_iobuf_0: component IOBUF
+     port map (
+      I => btns_4bits_tri_o_0(0),
+      IO => btns_4bits_tri_io(0),
+      O => btns_4bits_tri_i_0(0),
+      T => btns_4bits_tri_t_0(0)
+    );
+btns_4bits_tri_iobuf_1: component IOBUF
+     port map (
+      I => btns_4bits_tri_o_1(1),
+      IO => btns_4bits_tri_io(1),
+      O => btns_4bits_tri_i_1(1),
+      T => btns_4bits_tri_t_1(1)
+    );
+btns_4bits_tri_iobuf_2: component IOBUF
+     port map (
+      I => btns_4bits_tri_o_2(2),
+      IO => btns_4bits_tri_io(2),
+      O => btns_4bits_tri_i_2(2),
+      T => btns_4bits_tri_t_2(2)
+    );
+btns_4bits_tri_iobuf_3: component IOBUF
+     port map (
+      I => btns_4bits_tri_o_3(3),
+      IO => btns_4bits_tri_io(3),
+      O => btns_4bits_tri_i_3(3),
+      T => btns_4bits_tri_t_3(3)
+    );
 design_1_i: component design_1
      port map (
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -86,6 +142,18 @@ design_1_i: component design_1
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      btns_4bits_tri_i(3) => btns_4bits_tri_i_3(3),
+      btns_4bits_tri_i(2) => btns_4bits_tri_i_2(2),
+      btns_4bits_tri_i(1) => btns_4bits_tri_i_1(1),
+      btns_4bits_tri_i(0) => btns_4bits_tri_i_0(0),
+      btns_4bits_tri_o(3) => btns_4bits_tri_o_3(3),
+      btns_4bits_tri_o(2) => btns_4bits_tri_o_2(2),
+      btns_4bits_tri_o(1) => btns_4bits_tri_o_1(1),
+      btns_4bits_tri_o(0) => btns_4bits_tri_o_0(0),
+      btns_4bits_tri_t(3) => btns_4bits_tri_t_3(3),
+      btns_4bits_tri_t(2) => btns_4bits_tri_t_2(2),
+      btns_4bits_tri_t(1) => btns_4bits_tri_t_1(1),
+      btns_4bits_tri_t(0) => btns_4bits_tri_t_0(0)
     );
 end STRUCTURE;

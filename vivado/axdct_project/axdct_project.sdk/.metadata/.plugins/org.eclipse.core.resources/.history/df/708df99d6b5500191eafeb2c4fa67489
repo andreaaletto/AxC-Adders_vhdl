@@ -1,0 +1,14 @@
+/*
+ * bc12_driver.h
+ *
+ *  Created on: 02 apr 2019
+ *      Author: andrea
+ */
+
+#ifndef SRC_BC12_DRIVER_H_
+#define SRC_BC12_DRIVER_H_
+
+#include "xparameters.h"
+#include "BC12_axi.h"
+
+#endif /* SRC_BC12_DRIVER_H_ */
