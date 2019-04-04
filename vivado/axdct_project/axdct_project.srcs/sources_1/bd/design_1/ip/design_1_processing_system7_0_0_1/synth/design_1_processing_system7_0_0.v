@@ -58,10 +58,6 @@ AXI_GP1_THREAD_ID_WIDTH=12,C_NUM_F2P_INTR_INPUTS=1,C_IRQ_F2P_MODE=DIRECT,C_DQ_WI
 ,C_GP1_EN_MODIFIABLE_TXN=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_processing_system7_0_0 (
-  ENET0_MDIO_MDC,
-  ENET0_MDIO_O,
-  ENET0_MDIO_T,
-  ENET0_MDIO_I,
   SDIO0_WP,
   TTC0_WAVE0_OUT,
   TTC0_WAVE1_OUT,
@@ -133,15 +129,6 @@ module design_1_processing_system7_0_0 (
   PS_PORB
 );
 
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDC" *)
-output wire ENET0_MDIO_MDC;
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_O" *)
-output wire ENET0_MDIO_O;
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_T" *)
-output wire ENET0_MDIO_T;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MDIO_ETHERNET_0, CAN_DEBUG false" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_I" *)
-input wire ENET0_MDIO_I;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sdio:1.0 SDIO_0 WP" *)
 input wire SDIO0_WP;
 output wire TTC0_WAVE0_OUT;
@@ -349,9 +336,9 @@ inout wire PS_PORB;
     .CAN1_PHY_RX(1'B0),
     .ENET0_GMII_TX_EN(),
     .ENET0_GMII_TX_ER(),
-    .ENET0_MDIO_MDC(ENET0_MDIO_MDC),
-    .ENET0_MDIO_O(ENET0_MDIO_O),
-    .ENET0_MDIO_T(ENET0_MDIO_T),
+    .ENET0_MDIO_MDC(),
+    .ENET0_MDIO_O(),
+    .ENET0_MDIO_T(),
     .ENET0_PTP_DELAY_REQ_RX(),
     .ENET0_PTP_DELAY_REQ_TX(),
     .ENET0_PTP_PDELAY_REQ_RX(),
@@ -369,7 +356,7 @@ inout wire PS_PORB;
     .ENET0_GMII_RX_DV(1'B0),
     .ENET0_GMII_RX_ER(1'B0),
     .ENET0_GMII_TX_CLK(1'B0),
-    .ENET0_MDIO_I(ENET0_MDIO_I),
+    .ENET0_MDIO_I(1'B0),
     .ENET0_EXT_INTIN(1'B0),
     .ENET0_GMII_RXD(8'B0),
     .ENET1_GMII_TX_EN(),

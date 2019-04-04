@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Wed Apr  3 11:04:44 2019
+--Date        : Wed Apr  3 15:01:30 2019
 --Host        : andrea running 64-bit Deepin 15.9.3
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1134,10 +1134,6 @@ end design_1;
 architecture STRUCTURE of design_1 is
   component design_1_processing_system7_0_0 is
   port (
-    ENET0_MDIO_MDC : out STD_LOGIC;
-    ENET0_MDIO_O : out STD_LOGIC;
-    ENET0_MDIO_T : out STD_LOGIC;
-    ENET0_MDIO_I : in STD_LOGIC;
     SDIO0_WP : in STD_LOGIC;
     TTC0_WAVE0_OUT : out STD_LOGIC;
     TTC0_WAVE1_OUT : out STD_LOGIC;
@@ -1375,9 +1371,6 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_processing_system7_0_ENET0_MDIO_MDC_UNCONNECTED : STD_LOGIC;
-  signal NLW_processing_system7_0_ENET0_MDIO_O_UNCONNECTED : STD_LOGIC;
-  signal NLW_processing_system7_0_ENET0_MDIO_T_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -1487,10 +1480,6 @@ processing_system7_0: component design_1_processing_system7_0_0
       DDR_VRN => FIXED_IO_ddr_vrn,
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
-      ENET0_MDIO_I => '0',
-      ENET0_MDIO_MDC => NLW_processing_system7_0_ENET0_MDIO_MDC_UNCONNECTED,
-      ENET0_MDIO_O => NLW_processing_system7_0_ENET0_MDIO_O_UNCONNECTED,
-      ENET0_MDIO_T => NLW_processing_system7_0_ENET0_MDIO_T_UNCONNECTED,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),

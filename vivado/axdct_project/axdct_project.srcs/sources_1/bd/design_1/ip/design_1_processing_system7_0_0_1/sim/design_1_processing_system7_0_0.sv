@@ -677,10 +677,6 @@
 
 //MODULE DECLARATION
  module design_1_processing_system7_0_0 (
-  ENET0_MDIO_MDC,
-  ENET0_MDIO_O,
-  ENET0_MDIO_T,
-  ENET0_MDIO_I,
   SDIO0_WP,
   TTC0_WAVE0_OUT,
   TTC0_WAVE1_OUT,
@@ -813,10 +809,6 @@
 
 //INPUT AND OUTPUT PORTS
 
-      output  ENET0_MDIO_MDC;
-      output  ENET0_MDIO_O;
-      output  ENET0_MDIO_T;
-      input  ENET0_MDIO_I;
       input  SDIO0_WP;
       output  TTC0_WAVE0_OUT;
       output  TTC0_WAVE1_OUT;
@@ -889,9 +881,6 @@
 
 //REG DECLARATIONS
 
-      reg ENET0_MDIO_MDC;
-      reg ENET0_MDIO_O;
-      reg ENET0_MDIO_T;
       reg TTC0_WAVE0_OUT;
       reg TTC0_WAVE1_OUT;
       reg TTC0_WAVE2_OUT;
