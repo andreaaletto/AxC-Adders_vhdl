@@ -1,0 +1,281 @@
+14:12:45 INFO  : Registering command handlers for SDK TCF services
+14:12:47 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+14:12:49 INFO  : XSCT server has started successfully.
+14:12:49 INFO  : Successfully done setting XSCT server connection channel  
+14:12:49 INFO  : Successfully done setting SDK workspace  
+14:12:49 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+14:21:10 INFO  : Registering command handlers for SDK TCF services
+14:21:11 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+14:21:13 INFO  : XSCT server has started successfully.
+14:21:13 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+14:21:15 INFO  : Successfully done setting XSCT server connection channel  
+14:21:15 INFO  : Successfully done setting SDK workspace  
+14:21:16 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+14:29:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+14:29:52 INFO  : 'fpga -state' command is executed.
+14:30:02 INFO  : Memory regions updated for context APU
+14:31:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:31:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+14:31:48 INFO  : FPGA configured successfully with bitstream "/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+14:31:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+14:31:57 INFO  : 'fpga -state' command is executed.
+14:31:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:31:57 INFO  : Jtag cable 'Digilent Zybo 210279653322A' is selected.
+14:31:57 INFO  : 'jtag frequency' command is executed.
+14:31:57 INFO  : Sourcing of '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:31:57 INFO  : Context for 'APU' is selected.
+14:31:57 INFO  : Hardware design information is loaded from '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:31:58 INFO  : 'configparams force-mem-access 1' command is executed.
+14:31:58 INFO  : Context for 'APU' is selected.
+14:31:59 INFO  : 'stop' command is executed.
+14:32:04 INFO  : 'ps7_init' command is executed.
+14:32:04 INFO  : 'ps7_post_config' command is executed.
+14:32:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:32:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:05 INFO  : The application '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:32:06 INFO  : 'configparams force-mem-access 0' command is executed.
+14:32:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+loadhw -hw /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+dow /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:32:06 INFO  : Memory regions updated for context APU
+14:32:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:06 INFO  : 'con' command is executed.
+14:32:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+con
+----------------End of Script----------------
+
+14:32:06 INFO  : Launch script is exported to file '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_cb11_driver_baremetal.elf_on_local.tcl'
+14:34:09 INFO  : Disconnected from the channel tcfchan#1.
+14:34:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+14:34:11 INFO  : 'fpga -state' command is executed.
+14:34:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:34:11 INFO  : Jtag cable 'Digilent Zybo 210279653322A' is selected.
+14:34:11 INFO  : 'jtag frequency' command is executed.
+14:34:11 INFO  : Sourcing of '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:34:11 INFO  : Context for 'APU' is selected.
+14:34:12 INFO  : Hardware design information is loaded from '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:34:12 INFO  : 'configparams force-mem-access 1' command is executed.
+14:34:12 INFO  : Context for 'APU' is selected.
+14:34:12 INFO  : 'stop' command is executed.
+14:34:18 INFO  : 'ps7_init' command is executed.
+14:34:18 INFO  : 'ps7_post_config' command is executed.
+14:34:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:34:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:34:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:34:19 INFO  : The application '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:34:19 INFO  : 'configparams force-mem-access 0' command is executed.
+14:34:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+loadhw -hw /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+dow /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:34:19 INFO  : Memory regions updated for context APU
+14:34:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:34:20 INFO  : 'con' command is executed.
+14:34:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+con
+----------------End of Script----------------
+
+14:34:20 INFO  : Launch script is exported to file '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_cb11_driver_baremetal.elf_on_local.tcl'
+14:36:03 INFO  : Disconnected from the channel tcfchan#2.
+14:36:33 INFO  : Registering command handlers for SDK TCF services
+14:36:34 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+14:36:36 INFO  : XSCT server has started successfully.
+14:36:36 INFO  : Successfully done setting XSCT server connection channel  
+14:36:36 INFO  : Successfully done setting SDK workspace  
+14:36:36 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+14:36:36 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+14:39:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+14:39:28 INFO  : 'fpga -state' command is executed.
+14:39:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:39:28 INFO  : Jtag cable 'Digilent Zybo 210279653322A' is selected.
+14:39:28 INFO  : 'jtag frequency' command is executed.
+14:39:28 INFO  : Sourcing of '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:39:28 INFO  : Context for 'APU' is selected.
+14:39:28 INFO  : Hardware design information is loaded from '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:39:28 INFO  : 'configparams force-mem-access 1' command is executed.
+14:39:28 INFO  : Context for 'APU' is selected.
+14:39:28 INFO  : 'stop' command is executed.
+14:39:34 INFO  : 'ps7_init' command is executed.
+14:39:34 INFO  : 'ps7_post_config' command is executed.
+14:39:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:39:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:39:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:39:35 INFO  : The application '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:39:35 INFO  : 'configparams force-mem-access 0' command is executed.
+14:39:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+loadhw -hw /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+dow /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:39:35 INFO  : Memory regions updated for context APU
+14:39:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:39:35 INFO  : 'con' command is executed.
+14:39:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+con
+----------------End of Script----------------
+
+14:39:35 INFO  : Launch script is exported to file '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_cb11_driver_baremetal.elf_on_local.tcl'
+14:40:39 INFO  : Disconnected from the channel tcfchan#1.
+15:12:56 INFO  : Registering command handlers for SDK TCF services
+15:12:57 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+15:12:59 INFO  : XSCT server has started successfully.
+15:12:59 INFO  : Successfully done setting XSCT server connection channel  
+15:13:00 INFO  : Successfully done setting SDK workspace  
+15:13:00 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+15:13:00 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+15:13:02 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1554210267000,  Project:1554207044000
+15:13:02 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+15:13:02 INFO  : Copied contents of /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+15:13:04 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:13:06 INFO  : 
+15:13:06 INFO  : Updating hardware inferred compiler options for cb11_driver_baremetal.
+15:13:06 INFO  : Clearing existing target manager status.
+15:13:29 INFO  : Registering command handlers for SDK TCF services
+15:13:30 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+15:13:32 INFO  : XSCT server has started successfully.
+15:13:32 INFO  : Successfully done setting XSCT server connection channel  
+15:13:32 INFO  : Successfully done setting SDK workspace  
+15:13:32 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+15:13:32 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+15:15:38 INFO  : Registering command handlers for SDK TCF services
+15:15:39 INFO  : Launching XSCT server: xsct -n -interactive /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/temp_xsdb_launch_script.tcl
+15:15:41 INFO  : XSCT server has started successfully.
+15:15:41 INFO  : Successfully done setting XSCT server connection channel  
+15:15:41 INFO  : Successfully done setting SDK workspace  
+15:15:41 INFO  : Processing command line option -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf.
+15:15:41 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+15:15:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:16:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:16:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+15:16:07 INFO  : FPGA configured successfully with bitstream "/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:16:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+15:16:24 INFO  : 'fpga -state' command is executed.
+15:16:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:16:24 INFO  : Jtag cable 'Digilent Zybo 210279653322A' is selected.
+15:16:24 INFO  : 'jtag frequency' command is executed.
+15:16:24 INFO  : Sourcing of '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:16:24 INFO  : Context for 'APU' is selected.
+15:16:24 INFO  : Hardware design information is loaded from '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:16:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:16:24 INFO  : Context for 'APU' is selected.
+15:16:25 INFO  : 'stop' command is executed.
+15:16:30 INFO  : 'ps7_init' command is executed.
+15:16:31 INFO  : 'ps7_post_config' command is executed.
+15:16:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:16:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:16:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:16:32 INFO  : The application '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:16:32 INFO  : 'configparams force-mem-access 0' command is executed.
+15:16:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+loadhw -hw /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+dow /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:16:32 INFO  : Memory regions updated for context APU
+15:16:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:16:32 INFO  : 'con' command is executed.
+15:16:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+con
+----------------End of Script----------------
+
+15:16:32 INFO  : Launch script is exported to file '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_cb11_driver_baremetal.elf_on_local.tcl'
+15:17:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:17:48 INFO  : Jtag cable 'Digilent Zybo 210279653322A' is selected.
+15:17:48 INFO  : 'jtag frequency' command is executed.
+15:17:48 INFO  : Sourcing of '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:17:48 INFO  : Context for 'APU' is selected.
+15:17:48 INFO  : System reset is completed.
+15:17:51 INFO  : 'after 3000' command is executed.
+15:17:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1' command is executed.
+15:17:55 INFO  : FPGA configured successfully with bitstream "/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:17:55 INFO  : Context for 'APU' is selected.
+15:17:55 INFO  : Hardware design information is loaded from '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:17:55 INFO  : 'configparams force-mem-access 1' command is executed.
+15:17:55 INFO  : Context for 'APU' is selected.
+15:18:00 INFO  : 'ps7_init' command is executed.
+15:18:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:18:01 INFO  : The application '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:18:01 INFO  : 'configparams force-mem-access 0' command is executed.
+15:18:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279653322A" && level==0} -index 1
+fpga -file /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+loadhw -hw /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+ps7_init
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+dow /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/cb11_driver_baremetal/Debug/cb11_driver_baremetal.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:18:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:18:01 INFO  : 'con' command is executed.
+15:18:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279653322A"} -index 0
+con
+----------------End of Script----------------
+
+15:18:01 INFO  : Disconnected from the channel tcfchan#1.
+15:19:30 WARN  : channel "tcfchan#1" closed

@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Apr  2 15:11:49 2019
+# Process ID: 3073
+# Current directory: /home/andrea/vhdl_adders/vivado
+# Command line: vivado
+# Log file: /home/andrea/vhdl_adders/vivado/vivado.log
+# Journal file: /home/andrea/vhdl_adders/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/andrea/vhdl_adders/vivado/ip_repo/CB11_axi_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/andrea/vhdl_adders/vivado/ip_repo/BC12_axi_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/andrea/Xilinx/Vivado/2018.3/data/ip'.
+CRITICAL WARNING: [Common 17-1649] The Vivado message database '/home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.runs/synth_1/vivado.pb' contains 24458 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 24459' and re-open the project.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 6387.750 ; gain = 124.918 ; free physical = 4217 ; free virtual = 5963
+update_compile_order -fileset sources_1
+file copy -force /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.runs/impl_1/design_1_wrapper.sysdef /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  6 2018-23:53:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Labtools 27-2058] connect_hw_server command cancelled.
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:28 . Memory (MB): peak = 6530.164 ; gain = 0.000 ; free physical = 3853 ; free virtual = 5915
+INFO: [Common 17-344] 'connect_hw_server' was cancelled
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtools 27-3461] Cannot support an older version of hw_server.
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+launch_sdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk -hwspec /home/andrea/vhdl_adders/vivado/axdct_project/axdct_project.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  2 15:19:36 2019...
