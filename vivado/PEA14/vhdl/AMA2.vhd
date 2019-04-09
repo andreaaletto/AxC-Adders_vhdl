@@ -1,0 +1,1 @@
+/home/andrea/vhdl_adders/Src/Cells/AMA2.vhd
