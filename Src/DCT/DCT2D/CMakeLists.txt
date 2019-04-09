@@ -15,3 +15,6 @@ add_dependencies(BAS11 BAS111D)
 
 add_vhdl_source(PEA12.vhd PEA12)
 add_dependencies(PEA12 PEA121D)
+
+add_vhdl_source(PEA14.vhd PEA14)
+add_dependencies(PEA14 PEA141D)

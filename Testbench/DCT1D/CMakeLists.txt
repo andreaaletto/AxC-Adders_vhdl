@@ -15,3 +15,6 @@ add_dependencies(tb_BAS111D BAS111D)
 
 add_testbench_source(tb_PEA121D.vhd tb_PEA121D)
 add_dependencies(tb_PEA121D PEA121D)
+
+add_testbench_source(tb_PEA141D.vhd tb_PEA141D)
+add_dependencies(tb_PEA141D PEA141D)
