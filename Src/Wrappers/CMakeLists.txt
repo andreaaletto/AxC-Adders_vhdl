@@ -12,3 +12,6 @@ add_dependencies(BAS09Wrapper BAS09 utils)
 
 add_vhdl_source(BAS11Wrapper.vhd BAS11Wrapper)
 add_dependencies(BAS11Wrapper BAS11 utils)
+
+add_vhdl_source(PEA12Wrapper.vhd PEA12Wrapper)
+add_dependencies(PEA12Wrapper PEA12 utils)
