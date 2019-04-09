@@ -1,4 +1,4 @@
---! @file BAS091D.vhd
+--! @file BAS081D.vhd
 --!
 --! @author	Andrea Aletto <andrea.aletto8@gmail.com>
 --! 
@@ -28,7 +28,7 @@ library work;
 use work.InexactCellType.all;
 use work.ImageBlockType.all;
 
-entity BAS091D is
+entity BAS081D is
 	generic (
 			nab0		: natural 			:= 0;
 			cell_type0	: Inexact_cell_type := cell_AMA1; 
@@ -82,9 +82,9 @@ entity BAS091D is
 			column_out 		: out 	dct_vector
 
     );
-end BAS091D;
+end BAS081D;
 
-architecture dataflow of BAS091D is
+architecture dataflow of BAS081D is
 
 	component generic_adder_subtractor is
         generic (
@@ -160,6 +160,9 @@ architecture dataflow of BAS091D is
 	signal x5c_out	: std_logic_vector (15 downto 0);
 	signal x6c_out	: std_logic_vector (15 downto 0);
 	signal x7c_out	: std_logic_vector (15 downto 0);
+	
+	signal x4c_rshifted	: std_logic_vector (15 downto 0);
+	signal x6c_rshifted	: std_logic_vector (15 downto 0);
 
 	signal x0d_in	: std_logic_vector (15 downto 0);
 	signal x1d_in	: std_logic_vector (15 downto 0);
@@ -193,7 +196,7 @@ begin
 	x6a <= column_in(6);
 	x7a <= column_in(7);
 
-	-- BAS09 First step
+	-- BAS08 First step
 
 	sum_0a7a_inst : generic_adder_subtractor generic map (nab => nab0, cell_type => cell_type0) port map ( add_1 => x0a, add_2 => x7a, sub_add_n => '0', sum => x0b_in);
 	sum_1a6a_inst : generic_adder_subtractor generic map (nab => nab1, cell_type => cell_type1) port map ( add_1 => x1a, add_2 => x6a, sub_add_n => '0', sum => x1b_in);
@@ -215,7 +218,7 @@ begin
 	reg_x6b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6b_in, data_out => x6b_out);
 	reg_x7b_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7b_in, data_out => x7b_out);
 
-	-- BAS09 Second step
+	-- BAS08 Second step
 
 	sum_0b3b_inst : generic_adder_subtractor generic map (nab => nab8, cell_type => cell_type8) port map ( add_1 => x0b_out	, add_2 => x3b_out, sub_add_n => '0', sum => x0c_in);
 	sum_6b7b_inst : generic_adder_subtractor generic map (nab => nab9, cell_type => cell_type9) port map ( add_1 => x6b_out	, add_2 => x7b_out, sub_add_n => '0', sum => x1c_in);
@@ -237,15 +240,18 @@ begin
 	reg_x6c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6c_in, data_out => x6c_out);
 	reg_x7c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7c_in, data_out => x7c_out);
 	
-	-- BAS09 Third step
+	-- BAS08 Third step
+
+	x4c_rshifted <= x4c_out(15) & x4c_out(15 downto 1);
+	x6c_rshifted <= x6c_out(15) & x6c_out(15 downto 1);
 
 	sum_0c2c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x0c_out, add_2 => x2c_out, sub_add_n => '0', sum => x0d_in);
 	x1d_in <= x1c_out;
-	sum_4c6c_inst : generic_adder_subtractor generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => x4c_out, add_2 => x6c_out, sub_add_n => '0', sum => x2d_in);
+	sum_4c6c_inst : generic_adder_subtractor generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => x4c_rshifted, add_2 => x6c_out, sub_add_n => '0', sum => x2d_in);
 	x3d_in <= x3c_out;
 	sub_0c2c_inst : generic_adder_subtractor generic map (nab => nab18, cell_type => cell_type18) port map ( add_1 => x0c_out, add_2 => x2c_out, sub_add_n => '1', sum => x4d_in);
 	x5d_in <= x5c_out;
-	sub_6c4c_inst : generic_adder_subtractor generic map (nab => nab19, cell_type => cell_type19) port map ( add_1 => x6c_out, add_2 => x4c_out, sub_add_n => '1', sum => x6d_in);
+	sub_6c4c_inst : generic_adder_subtractor generic map (nab => nab19, cell_type => cell_type19) port map ( add_1 => x6c_rshifted, add_2 => x4c_out, sub_add_n => '1', sum => x6d_in);
 	x7d_in <= x7c_out;
 
 	-- Store results
