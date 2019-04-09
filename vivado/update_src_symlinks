@@ -29,3 +29,11 @@ ln -fs $REPO_PATH/Src/DCT/DCT1D/CB111D.vhd $REPO_PATH/vivado/CB11/vhdl
 ln -fs $REPO_PATH/Src/DCT/DCT2D/CB11.vhd $REPO_PATH/vivado/CB11/vhdl
 ln -fs $REPO_PATH/Src/Wrappers/CB11Wrapper.vhd $REPO_PATH/vivado/CB11/vhdl
 
+# Links for BAS11
+
+ln -fs $REPO_PATH/Src/Common/*.vhd $REPO_PATH/vivado/BAS11/vhdl
+ln -fs $REPO_PATH/Src/Cells/*.vhd $REPO_PATH/vivado/BAS11/vhdl
+ln -fs $REPO_PATH/Src/Adders/*.vhd $REPO_PATH/vivado/BAS11/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT1D/BAS111D.vhd $REPO_PATH/vivado/BAS11/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT2D/BAS11.vhd $REPO_PATH/vivado/BAS11/vhdl
+ln -fs $REPO_PATH/Src/Wrappers/BAS11Wrapper.vhd $REPO_PATH/vivado/BAS11/vhdl
