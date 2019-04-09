@@ -1,8 +1,0 @@
-15:16:23 **** Incremental Build of configuration Debug for project cb11_driver_baremetal ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nessuna operazione da eseguire per "main-build".
-
-15:16:23 Build Finished (took 83ms)
-

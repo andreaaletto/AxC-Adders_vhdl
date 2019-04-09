@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;axdct_baremetal/src/bc12_driver&apos; to &apos;bc12_driver.c&apos;" description="Rename resource &apos;bc12_driver&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/bc12_driver" name="bc12_driver.c" stamp="1554225411137" updateReferences="true"/>
-</session>

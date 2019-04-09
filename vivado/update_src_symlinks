@@ -1,11 +1,31 @@
 #!/bin/bash
 
-# mkdir -p $HOME/vhdl_adders/vivado/src_links
 
-ln -s $HOME/vhdl_adders/Src/Common/*.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
-ln -s $HOME/vhdl_adders/Src/Cells/*.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
-ln -s $HOME/vhdl_adders/Src/Adders/*.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
-ln -s $HOME/vhdl_adders/Src/DCT/DCT1D/BC121D.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
-ln -s $HOME/vhdl_adders/Src/DCT/DCT2D/BC12.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
-ln -s $HOME/vhdl_adders/Src/Wrappers/BC12Wrapper.vhd $HOME/vhdl_adders/vivado/BC12/vhdl
+REPO_PATH=$HOME/vhdl_adders
+
+mkdir -p $REPO_PATH/vivado/BC12/vhdl
+mkdir -p $REPO_PATH/vivado/CB11/vhdl
+mkdir -p $REPO_PATH/vivado/PEA12/vhdl
+mkdir -p $REPO_PATH/vivado/PEA14/vhdl
+mkdir -p $REPO_PATH/vivado/BAS08/vhdl
+mkdir -p $REPO_PATH/vivado/BAS09/vhdl
+mkdir -p $REPO_PATH/vivado/BAS11/vhdl
+
+# Links for BC12
+
+ln -fs $REPO_PATH/Src/Common/*.vhd $REPO_PATH/vivado/BC12/vhdl
+ln -fs $REPO_PATH/Src/Cells/*.vhd $REPO_PATH/vivado/BC12/vhdl
+ln -fs $REPO_PATH/Src/Adders/*.vhd $REPO_PATH/vivado/BC12/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT1D/BC121D.vhd $REPO_PATH/vivado/BC12/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT2D/BC12.vhd $REPO_PATH/vivado/BC12/vhdl
+ln -fs $REPO_PATH/Src/Wrappers/BC12Wrapper.vhd $REPO_PATH/vivado/BC12/vhdl
+
+# Links for CB11
+
+ln -fs $REPO_PATH/Src/Common/*.vhd $REPO_PATH/vivado/CB11/vhdl
+ln -fs $REPO_PATH/Src/Cells/*.vhd $REPO_PATH/vivado/CB11/vhdl
+ln -fs $REPO_PATH/Src/Adders/*.vhd $REPO_PATH/vivado/CB11/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT1D/CB111D.vhd $REPO_PATH/vivado/CB11/vhdl
+ln -fs $REPO_PATH/Src/DCT/DCT2D/CB11.vhd $REPO_PATH/vivado/CB11/vhdl
+ln -fs $REPO_PATH/Src/Wrappers/CB11Wrapper.vhd $REPO_PATH/vivado/CB11/vhdl
 
