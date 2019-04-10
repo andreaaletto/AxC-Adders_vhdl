@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity BC12_axi_v1_0 is
+entity BAS08_axi_v1_0 is
 	generic (
 		-- Users to add parameters here
 		nab0		: natural 			:= 0;
@@ -64,12 +64,12 @@ entity BC12_axi_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end BC12_axi_v1_0;
+end BAS08_axi_v1_0;
 
-architecture arch_imp of BC12_axi_v1_0 is
+architecture arch_imp of BAS08_axi_v1_0 is
 
 	-- component declaration
-	component BC12_axi_v1_0_S00_AXI is
+	component BAS08_axi_v1_0_S00_AXI is
 		generic (
 			nab0		: natural 			:= 0;
 			nab1		: natural 			:= 0;
@@ -117,14 +117,14 @@ architecture arch_imp of BC12_axi_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component BC12_axi_v1_0_S00_AXI;
+	end component BAS08_axi_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-BC12_axi_v1_0_S00_AXI_inst : BC12_axi_v1_0_S00_AXI
+BAS08_axi_v1_0_S00_AXI_inst : BAS08_axi_v1_0_S00_AXI
 	generic map (
-	    ab0 =>             nab0,
+	    nab0 =>             nab0,
             nab1 =>             nab1,
             nab2 =>             nab2,
             nab3 =>             nab3,

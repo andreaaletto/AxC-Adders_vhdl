@@ -28,7 +28,7 @@ entity PEA12_axi_v1_0_S00_AXI is
     nab20		: natural 			:= 0;
     nab21		: natural 			:= 0;
     nab22		: natural 			:= 0;
-    nab23		: natural 			:= 0
+    nab23		: natural 			:= 0;
 
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line

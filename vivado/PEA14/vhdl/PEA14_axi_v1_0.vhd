@@ -19,7 +19,7 @@ entity PEA14_axi_v1_0 is
         nab11		: natural 			:= 0;
         nab12		: natural 			:= 0;
         nab13		: natural 			:= 0;
-        nab14		: natural 			:= 0
+        nab14		: natural 			:= 0;
 
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
