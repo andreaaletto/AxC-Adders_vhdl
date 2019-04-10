@@ -29,7 +29,7 @@ use work.ImageBlockType.all;
 
 entity BAS11Wrapper is
 generic (
-        a_param     : real              := 0.0;
+        a_param		: std_logic_vector(2 downto 0) 	:= "000"; --intended as fixed point (2,1)
 		nab0		: natural 			:= 0;
 		nab1		: natural 			:= 0;
 		nab2		: natural 			:= 0;
@@ -189,7 +189,7 @@ architecture Behavioral of BAS11Wrapper is
 
 component BAS11 is
 	generic (
-		a_param		: real   			:= 0.0;
+		a_param		: std_logic_vector(2 downto 0) 	:= "000";
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;

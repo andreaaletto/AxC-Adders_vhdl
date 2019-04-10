@@ -35,7 +35,7 @@ architecture behavioral of tb_BAS111D is
 
 component BAS111D is
 	generic (
-		a_param		: real 				:= 0.0;
+		a_param		: std_logic_vector(2 downto 0) 	:= "000"; --intended as fixed point (2,1)
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -191,7 +191,7 @@ begin
 
 	uut_0 : BAS111D
 		generic map(
-			a_param		=> 0.0,
+			a_param		=> "000",
 			nab0  		=> 0,
 			nab1  		=> 0,
 			nab2  		=> 0,
@@ -220,7 +220,7 @@ begin
 
 	uut_05 : BAS111D
 		generic map(
-			a_param		=> 0.5,
+			a_param		=> "001",
 			nab0  		=> 0,
 			nab1  		=> 0,
 			nab2  		=> 0,
@@ -249,7 +249,7 @@ begin
 
 	uut_1 : BAS111D
 		generic map(
-			a_param		=> 1.0,
+			a_param		=> "010",
 			nab0  		=> 0,
 			nab1  		=> 0,
 			nab2  		=> 0,
@@ -278,7 +278,7 @@ begin
 
 	uut_2 : BAS111D
 		generic map(
-			a_param		=> 2.0,
+			a_param		=> "100",
 			nab0  		=> 0,
 			nab1  		=> 0,
 			nab2  		=> 0,

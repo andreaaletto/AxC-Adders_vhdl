@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity BAS11_axi_v1_0 is
 	generic (
 		-- Users to add parameters here
-        a_param		: real 				:= 0.0;
+        a_param		: std_logic_vector(2 downto 0) 	:= "000";
 		nab0		: natural 			:= 0;
         nab1		: natural 			:= 0;
         nab2		: natural 			:= 0;
@@ -69,7 +69,7 @@ architecture arch_imp of BAS11_axi_v1_0 is
 	-- component declaration
 	component BAS11_axi_v1_0_S00_AXI is
 		generic (
-		a_param		: real 				:= 0.0;
+		a_param		: std_logic_vector(2 downto 0) 	:= "000";
 		nab0		: natural 			:= 0;
         nab1		: natural 			:= 0;
         nab2		: natural 			:= 0;
