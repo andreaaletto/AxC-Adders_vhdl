@@ -167,14 +167,23 @@ architecture dataflow of CB111D is
 	signal x6c_out	: std_logic_vector (15 downto 0);
 	signal x7c_out	: std_logic_vector (15 downto 0);
 
-	signal x0d	: std_logic_vector (15 downto 0);
-	signal x1d	: std_logic_vector (15 downto 0);
-	signal x2d	: std_logic_vector (15 downto 0);
-	signal x3d	: std_logic_vector (15 downto 0);
-	signal x4d	: std_logic_vector (15 downto 0);
-	signal x5d	: std_logic_vector (15 downto 0);
-	signal x6d	: std_logic_vector (15 downto 0);
-	signal x7d	: std_logic_vector (15 downto 0);
+	signal x0d_in	: std_logic_vector (15 downto 0);
+	signal x1d_in	: std_logic_vector (15 downto 0);
+	signal x2d_in	: std_logic_vector (15 downto 0);
+	signal x3d_in	: std_logic_vector (15 downto 0);
+	signal x4d_in	: std_logic_vector (15 downto 0);
+	signal x5d_in	: std_logic_vector (15 downto 0);
+	signal x6d_in	: std_logic_vector (15 downto 0);
+	signal x7d_in	: std_logic_vector (15 downto 0);
+
+	signal x0d_out	: std_logic_vector (15 downto 0);
+	signal x1d_out	: std_logic_vector (15 downto 0);
+	signal x2d_out	: std_logic_vector (15 downto 0);
+	signal x3d_out	: std_logic_vector (15 downto 0);
+	signal x4d_out	: std_logic_vector (15 downto 0);
+	signal x5d_out	: std_logic_vector (15 downto 0);
+	signal x6d_out	: std_logic_vector (15 downto 0);
+	signal x7d_out	: std_logic_vector (15 downto 0);
 
 	signal x0e_in	: std_logic_vector (15 downto 0);
 	signal x1e_in	: std_logic_vector (15 downto 0);
@@ -252,27 +261,38 @@ begin
 	reg_x6c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6c_in, data_out => x6c_out);
 	reg_x7c_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7c_in, data_out => x7c_out);
 	
-	-- CB11 Third step (phase 1)
+	-- CB11 Third step
 
-	sum_0c1c_inst : generic_adder_subtractor generic map (nab => nab12, cell_type => cell_type12) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d);
-	sum_4c5c_inst : generic_adder_subtractor generic map (nab => nab13, cell_type => cell_type13) port map ( add_1 => x4c_out, add_2 => x5c_out, sub_add_n => '0', sum => x1d);
-	x2d <= x3c_out;
-	sub_4c6c_inst : generic_adder_subtractor generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => x4c_out, add_2 => x6c_out, sub_add_n => '1', sum => x3d);
-	sub_0c1c_inst : generic_adder_subtractor generic map (nab => nab15, cell_type => cell_type15) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '1', sum => x4d);
-	sub_4c5c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x4c_out, add_2 => x5c_out, sub_add_n => '1', sum => x5d);
-	inv_2c		  : generic_adder_subtractor generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => "0000000000000000", add_2 => x2c_out, sub_add_n => '1', sum => x6d);
-	sub_6c5c_inst : generic_adder_subtractor generic map (nab => nab18, cell_type => cell_type18) port map ( add_1 => x6c_out, add_2 => x5c_out, sub_add_n => '1', sum => x7d);
+	sum_0c1c_inst : generic_adder_subtractor generic map (nab => nab12, cell_type => cell_type12) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '0', sum => x0d_in);
+	sum_4c5c_inst : generic_adder_subtractor generic map (nab => nab13, cell_type => cell_type13) port map ( add_1 => x4c_out, add_2 => x5c_out, sub_add_n => '0', sum => x1d_in);
+	x2d_in <= x3c_out;
+	sub_4c6c_inst : generic_adder_subtractor generic map (nab => nab14, cell_type => cell_type14) port map ( add_1 => x4c_out, add_2 => x6c_out, sub_add_n => '1', sum => x3d_in);
+	sub_0c1c_inst : generic_adder_subtractor generic map (nab => nab15, cell_type => cell_type15) port map ( add_1 => x0c_out, add_2 => x1c_out, sub_add_n => '1', sum => x4d_in);
+	sub_4c5c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x4c_out, add_2 => x5c_out, sub_add_n => '1', sum => x5d_in);
+	inv_2c		  : generic_adder_subtractor generic map (nab => nab17, cell_type => cell_type17) port map ( add_1 => "0000000000000000", add_2 => x2c_out, sub_add_n => '1', sum => x6d_in);
+	sub_6c5c_inst : generic_adder_subtractor generic map (nab => nab18, cell_type => cell_type18) port map ( add_1 => x6c_out, add_2 => x5c_out, sub_add_n => '1', sum => x7d_in);
 	
-	-- CB11 Third step (phase 2)
+	-- Store results
 	
-	x0e_in <= x0d;
-	sum_1d6c_inst : generic_adder_subtractor generic map (nab => nab19, cell_type => cell_type19) port map ( add_1 => x1d, add_2 => x6c_out, sub_add_n => '0', sum => x1e_in);
-	x2e_in <= x2d;
-	sub_3d7c_inst : generic_adder_subtractor generic map (nab => nab20, cell_type => cell_type20) port map ( add_1 => x3d, add_2 => x7c_out, sub_add_n => '1', sum => x3e_in);
-	x4e_in <= x4d;
-	sum_5d7c_inst : generic_adder_subtractor generic map (nab => nab21, cell_type => cell_type21) port map ( add_1 => x5d, add_2 => x7c_out, sub_add_n => '0', sum => x5e_in);
-	x6e_in <= x6d;
-	sub_7d7c_inst : generic_adder_subtractor generic map (nab => nab22, cell_type => cell_type22) port map ( add_1 => x7d, add_2 => x7c_out, sub_add_n => '1', sum => x7e_in);
+	reg_x0d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x0d_in, data_out => x0d_out);
+	reg_x1d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x1d_in, data_out => x1d_out);
+	reg_x2d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x2d_in, data_out => x2d_out);
+	reg_x3d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x3d_in, data_out => x3d_out);
+	reg_x4d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x4d_in, data_out => x4d_out);
+	reg_x5d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x5d_in, data_out => x5d_out);
+	reg_x6d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x6d_in, data_out => x6d_out);
+	reg_x7d_inst : GenericRegister port map( clk => clk, rst => rst_n, en => en, data_in => x7d_in, data_out => x7d_out);
+
+	-- CB11 Fourth step
+	
+	x0e_in <= x0d_out;
+	sum_1d6c_inst : generic_adder_subtractor generic map (nab => nab19, cell_type => cell_type19) port map ( add_1 => x1d_out, add_2 => x6c_out, sub_add_n => '0', sum => x1e_in);
+	x2e_in <= x2d_out;
+	sub_3d7c_inst : generic_adder_subtractor generic map (nab => nab20, cell_type => cell_type20) port map ( add_1 => x3d_out, add_2 => x7c_out, sub_add_n => '1', sum => x3e_in);
+	x4e_in <= x4d_out;
+	sum_5d7c_inst : generic_adder_subtractor generic map (nab => nab21, cell_type => cell_type21) port map ( add_1 => x5d_out, add_2 => x7c_out, sub_add_n => '0', sum => x5e_in);
+	x6e_in <= x6d_out;
+	sub_7d7c_inst : generic_adder_subtractor generic map (nab => nab22, cell_type => cell_type22) port map ( add_1 => x7d_out, add_2 => x7c_out, sub_add_n => '1', sum => x7e_in);
 
 	-- Store results
 

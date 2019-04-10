@@ -249,7 +249,7 @@ begin
 		variable result : integer := 0; 
 	begin		
 
-		wait for 60 ns; -- Il componente completa dopo 6 colpi di clock
+		wait for 80 ns; -- Il componente completa dopo 6 colpi di clock
 
 		for i in 0 to 7 loop
 			for j in 0 to 7 loop

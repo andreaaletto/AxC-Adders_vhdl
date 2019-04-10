@@ -180,7 +180,7 @@ begin
 	stim_proc: process
 	begin		
 
-		wait for 30 ns; -- Il componente completa dopo 3 colpi di clock
+		wait for 40 ns; -- Il componente completa dopo 3 colpi di clock
 
 		assert column_out(0) = std_logic_vector(to_signed(14, 16)) 
 			report "Errore calcolo componente 0"
