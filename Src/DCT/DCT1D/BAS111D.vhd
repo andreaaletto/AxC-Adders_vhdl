@@ -30,7 +30,7 @@ use work.ImageBlockType.all;
 
 entity BAS111D is
 	generic (
-		a_param		: real			:= 0.0;
+		a_param		: std_logic_vector(2 downto 0) 	:= "000"; --intended as fixed point (2,1)
 		nab0		: natural 			:= 0;
 		cell_type0	: Inexact_cell_type := cell_AMA1; 
 		nab1		: natural 			:= 0;
@@ -246,24 +246,24 @@ begin
 	x6d_in <= x6c_out;
 	x7d_in <= x7c_out;
 
-	a_param_0: if (a_param = 0.0) generate
+	a_param_0: if (a_param = "000") generate
 		x2d_in <= "0000000000000000";
 		inv_2c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => "0000000000000000", add_2 => x2c_out, sub_add_n => '1', sum => x3d_in);
 	end generate;
 
-	a_param_0_5: if (a_param = 0.5) generate
+	a_param_0_5: if (a_param = "001") generate
 		x2d_in <= x2c_out(15) & x2c_out(15 downto 1); -- shift a dx: x2d_in = (x2c_out >> 1)
 
 		x3c_out_rshifted <= x3c_out(15) & x3c_out(15 downto 1);
 		sub_3c_sh_2c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x3c_out_rshifted, add_2 => x2c_out, sub_add_n => '1', sum => x3d_in);
 	end generate;
 
-	a_param_1: if (a_param = 1.0) generate
+	a_param_1: if (a_param = "010") generate
 		x2d_in <= x2c_out;
 		sub_3c2c_inst : generic_adder_subtractor generic map (nab => nab16, cell_type => cell_type16) port map ( add_1 => x3c_out, add_2 => x2c_out, sub_add_n => '1', sum => x3d_in);
 	end generate;
 
-	a_param_2: if (a_param = 2.0) generate
+	a_param_2: if (a_param = "100") generate
 		x2d_in <= x2c_out(15) & x2c_out(13 downto 0) & '0'; -- shift a sx: x2d_in = (x2c_out << 1)
 
 		x3c_out_lshifted <= x3c_out(15) & x3c_out(13 downto 0) & '0'; 

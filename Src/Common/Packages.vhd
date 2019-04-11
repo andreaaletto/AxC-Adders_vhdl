@@ -23,7 +23,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use IEEE.MATH_REAL.all;
 
 package ImageBlockType is 
 	type image_vector is array (0 to 7) of std_logic_vector(7 downto 0);
