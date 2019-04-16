@@ -3,6 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  set a_param [ipgui::add_param $IPINST -name "a_param" -parent ${Page_0} -widget comboBox]
+  set_property tooltip {The parameter called _a_ in BAS11 algorithm} ${a_param}
   ipgui::add_param $IPINST -name "nab0" -parent ${Page_0}
   ipgui::add_param $IPINST -name "nab1" -parent ${Page_0}
   ipgui::add_param $IPINST -name "nab2" -parent ${Page_0}
@@ -20,8 +22,23 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "nab14" -parent ${Page_0}
   ipgui::add_param $IPINST -name "nab15" -parent ${Page_0}
   ipgui::add_param $IPINST -name "nab16" -parent ${Page_0}
-  set a_param [ipgui::add_param $IPINST -name "a_param" -parent ${Page_0} -widget comboBox]
-  set_property tooltip {The parameter called _a_ in BAS11 algorithm} ${a_param}
+  ipgui::add_param $IPINST -name "cell0" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell1" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell2" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell3" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell4" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell5" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell6" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell7" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell8" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell9" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell10" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell11" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell12" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell13" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell14" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell15" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "cell16" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_ADDR_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0}
 
@@ -52,6 +69,159 @@ proc update_PARAM_VALUE.a_param { PARAM_VALUE.a_param } {
 
 proc validate_PARAM_VALUE.a_param { PARAM_VALUE.a_param } {
 	# Procedure called to validate a_param
+	return true
+}
+
+proc update_PARAM_VALUE.cell0 { PARAM_VALUE.cell0 } {
+	# Procedure called to update cell0 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell0 { PARAM_VALUE.cell0 } {
+	# Procedure called to validate cell0
+	return true
+}
+
+proc update_PARAM_VALUE.cell1 { PARAM_VALUE.cell1 } {
+	# Procedure called to update cell1 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell1 { PARAM_VALUE.cell1 } {
+	# Procedure called to validate cell1
+	return true
+}
+
+proc update_PARAM_VALUE.cell10 { PARAM_VALUE.cell10 } {
+	# Procedure called to update cell10 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell10 { PARAM_VALUE.cell10 } {
+	# Procedure called to validate cell10
+	return true
+}
+
+proc update_PARAM_VALUE.cell11 { PARAM_VALUE.cell11 } {
+	# Procedure called to update cell11 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell11 { PARAM_VALUE.cell11 } {
+	# Procedure called to validate cell11
+	return true
+}
+
+proc update_PARAM_VALUE.cell12 { PARAM_VALUE.cell12 } {
+	# Procedure called to update cell12 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell12 { PARAM_VALUE.cell12 } {
+	# Procedure called to validate cell12
+	return true
+}
+
+proc update_PARAM_VALUE.cell13 { PARAM_VALUE.cell13 } {
+	# Procedure called to update cell13 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell13 { PARAM_VALUE.cell13 } {
+	# Procedure called to validate cell13
+	return true
+}
+
+proc update_PARAM_VALUE.cell14 { PARAM_VALUE.cell14 } {
+	# Procedure called to update cell14 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell14 { PARAM_VALUE.cell14 } {
+	# Procedure called to validate cell14
+	return true
+}
+
+proc update_PARAM_VALUE.cell15 { PARAM_VALUE.cell15 } {
+	# Procedure called to update cell15 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell15 { PARAM_VALUE.cell15 } {
+	# Procedure called to validate cell15
+	return true
+}
+
+proc update_PARAM_VALUE.cell16 { PARAM_VALUE.cell16 } {
+	# Procedure called to update cell16 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell16 { PARAM_VALUE.cell16 } {
+	# Procedure called to validate cell16
+	return true
+}
+
+proc update_PARAM_VALUE.cell2 { PARAM_VALUE.cell2 } {
+	# Procedure called to update cell2 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell2 { PARAM_VALUE.cell2 } {
+	# Procedure called to validate cell2
+	return true
+}
+
+proc update_PARAM_VALUE.cell3 { PARAM_VALUE.cell3 } {
+	# Procedure called to update cell3 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell3 { PARAM_VALUE.cell3 } {
+	# Procedure called to validate cell3
+	return true
+}
+
+proc update_PARAM_VALUE.cell4 { PARAM_VALUE.cell4 } {
+	# Procedure called to update cell4 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell4 { PARAM_VALUE.cell4 } {
+	# Procedure called to validate cell4
+	return true
+}
+
+proc update_PARAM_VALUE.cell5 { PARAM_VALUE.cell5 } {
+	# Procedure called to update cell5 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell5 { PARAM_VALUE.cell5 } {
+	# Procedure called to validate cell5
+	return true
+}
+
+proc update_PARAM_VALUE.cell6 { PARAM_VALUE.cell6 } {
+	# Procedure called to update cell6 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell6 { PARAM_VALUE.cell6 } {
+	# Procedure called to validate cell6
+	return true
+}
+
+proc update_PARAM_VALUE.cell7 { PARAM_VALUE.cell7 } {
+	# Procedure called to update cell7 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell7 { PARAM_VALUE.cell7 } {
+	# Procedure called to validate cell7
+	return true
+}
+
+proc update_PARAM_VALUE.cell8 { PARAM_VALUE.cell8 } {
+	# Procedure called to update cell8 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell8 { PARAM_VALUE.cell8 } {
+	# Procedure called to validate cell8
+	return true
+}
+
+proc update_PARAM_VALUE.cell9 { PARAM_VALUE.cell9 } {
+	# Procedure called to update cell9 when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.cell9 { PARAM_VALUE.cell9 } {
+	# Procedure called to validate cell9
 	return true
 }
 
@@ -307,5 +477,90 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S00_AXI_D
 proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH PARAM_VALUE.C_S00_AXI_ADDR_WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.cell0 { MODELPARAM_VALUE.cell0 PARAM_VALUE.cell0 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell0}] ${MODELPARAM_VALUE.cell0}
+}
+
+proc update_MODELPARAM_VALUE.cell1 { MODELPARAM_VALUE.cell1 PARAM_VALUE.cell1 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell1}] ${MODELPARAM_VALUE.cell1}
+}
+
+proc update_MODELPARAM_VALUE.cell2 { MODELPARAM_VALUE.cell2 PARAM_VALUE.cell2 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell2}] ${MODELPARAM_VALUE.cell2}
+}
+
+proc update_MODELPARAM_VALUE.cell3 { MODELPARAM_VALUE.cell3 PARAM_VALUE.cell3 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell3}] ${MODELPARAM_VALUE.cell3}
+}
+
+proc update_MODELPARAM_VALUE.cell4 { MODELPARAM_VALUE.cell4 PARAM_VALUE.cell4 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell4}] ${MODELPARAM_VALUE.cell4}
+}
+
+proc update_MODELPARAM_VALUE.cell5 { MODELPARAM_VALUE.cell5 PARAM_VALUE.cell5 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell5}] ${MODELPARAM_VALUE.cell5}
+}
+
+proc update_MODELPARAM_VALUE.cell6 { MODELPARAM_VALUE.cell6 PARAM_VALUE.cell6 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell6}] ${MODELPARAM_VALUE.cell6}
+}
+
+proc update_MODELPARAM_VALUE.cell7 { MODELPARAM_VALUE.cell7 PARAM_VALUE.cell7 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell7}] ${MODELPARAM_VALUE.cell7}
+}
+
+proc update_MODELPARAM_VALUE.cell8 { MODELPARAM_VALUE.cell8 PARAM_VALUE.cell8 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell8}] ${MODELPARAM_VALUE.cell8}
+}
+
+proc update_MODELPARAM_VALUE.cell9 { MODELPARAM_VALUE.cell9 PARAM_VALUE.cell9 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell9}] ${MODELPARAM_VALUE.cell9}
+}
+
+proc update_MODELPARAM_VALUE.cell10 { MODELPARAM_VALUE.cell10 PARAM_VALUE.cell10 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell10}] ${MODELPARAM_VALUE.cell10}
+}
+
+proc update_MODELPARAM_VALUE.cell11 { MODELPARAM_VALUE.cell11 PARAM_VALUE.cell11 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell11}] ${MODELPARAM_VALUE.cell11}
+}
+
+proc update_MODELPARAM_VALUE.cell12 { MODELPARAM_VALUE.cell12 PARAM_VALUE.cell12 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell12}] ${MODELPARAM_VALUE.cell12}
+}
+
+proc update_MODELPARAM_VALUE.cell13 { MODELPARAM_VALUE.cell13 PARAM_VALUE.cell13 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell13}] ${MODELPARAM_VALUE.cell13}
+}
+
+proc update_MODELPARAM_VALUE.cell14 { MODELPARAM_VALUE.cell14 PARAM_VALUE.cell14 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell14}] ${MODELPARAM_VALUE.cell14}
+}
+
+proc update_MODELPARAM_VALUE.cell15 { MODELPARAM_VALUE.cell15 PARAM_VALUE.cell15 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell15}] ${MODELPARAM_VALUE.cell15}
+}
+
+proc update_MODELPARAM_VALUE.cell16 { MODELPARAM_VALUE.cell16 PARAM_VALUE.cell16 } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.cell16}] ${MODELPARAM_VALUE.cell16}
 }
 

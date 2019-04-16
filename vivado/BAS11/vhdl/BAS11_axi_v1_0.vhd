@@ -22,7 +22,24 @@ entity BAS11_axi_v1_0 is
         nab13		: natural 			:= 0;
         nab14		: natural 			:= 0;
         nab15		: natural 			:= 0;
-        nab16		: natural 			:= 0;
+		nab16		: natural 			:= 0;
+		cell0		: natural 			:= 0;
+		cell1		: natural 			:= 0;
+		cell2		: natural 			:= 0;
+		cell3		: natural 			:= 0;
+		cell4		: natural 			:= 0;
+		cell5		: natural 			:= 0;
+		cell6		: natural 			:= 0;
+		cell7		: natural 			:= 0;
+		cell8		: natural 			:= 0;
+		cell9		: natural 			:= 0;
+		cell10		: natural 			:= 0;
+		cell11		: natural 			:= 0;
+		cell12		: natural 			:= 0;
+		cell13		: natural 			:= 0;
+		cell14		: natural 			:= 0;
+		cell15		: natural 			:= 0;
+		cell16		: natural 			:= 0;
 
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
@@ -86,7 +103,24 @@ architecture arch_imp of BAS11_axi_v1_0 is
         nab13		: natural 			:= 0;
         nab14		: natural 			:= 0;
         nab15		: natural 			:= 0;
-        nab16		: natural 			:= 0;
+		nab16		: natural 			:= 0;
+		cell0		: natural 			:= 0;
+		cell1		: natural 			:= 0;
+		cell2		: natural 			:= 0;
+		cell3		: natural 			:= 0;
+		cell4		: natural 			:= 0;
+		cell5		: natural 			:= 0;
+		cell6		: natural 			:= 0;
+		cell7		: natural 			:= 0;
+		cell8		: natural 			:= 0;
+		cell9		: natural 			:= 0;
+		cell10		: natural 			:= 0;
+		cell11		: natural 			:= 0;
+		cell12		: natural 			:= 0;
+		cell13		: natural 			:= 0;
+		cell14		: natural 			:= 0;
+		cell15		: natural 			:= 0;
+		cell16		: natural 			:= 0;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 9
 		);
@@ -137,7 +171,24 @@ BAS11_axi_v1_0_S00_AXI_inst : BAS11_axi_v1_0_S00_AXI
         nab13 =>            nab13,
         nab14 =>            nab14,
         nab15 =>            nab15,
-        nab16 =>            nab16,
+		nab16 =>            nab16,
+		cell0 =>             cell0,
+		cell1 =>             cell1,
+		cell2 =>             cell2,
+		cell3 =>             cell3,
+		cell4 =>             cell4,
+		cell5 =>             cell5,
+		cell6 =>             cell6,
+		cell7 =>             cell7,
+		cell8 =>             cell8,
+		cell9 =>             cell9,
+		cell10 =>            cell10,
+		cell11 =>            cell11,
+		cell12 =>            cell12,
+		cell13 =>            cell13,
+		cell14 =>            cell14,
+		cell15 =>            cell15,
+		cell16 =>            cell16,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
