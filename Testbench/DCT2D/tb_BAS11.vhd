@@ -83,7 +83,7 @@ component BAS11 is
 end component BAS11;
 
 	signal clk 			: std_logic := '0';
-	signal en 			: std_logic := '1';
+	signal en 			: std_logic := '0';
 	signal rst_n		: std_logic := '1';
 	signal ready 		: std_logic := '0';
 
@@ -293,6 +293,7 @@ begin
 		variable result : integer := 0; 
 	begin		
 
+		en <= '1';
 		wait for 60 ns; -- Il componente completa dopo 6 colpi di clock
 
 		for i in 0 to 7 loop

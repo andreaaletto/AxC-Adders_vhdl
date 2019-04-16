@@ -39,3 +39,9 @@ end package;
 package AlgorithmType is 
 	type algorithm_type is (BC12, CB11, BAS08, BAS09, BAS11, PEA12, PEA14);
 end package;
+
+package TestBenchUtils is 
+	type int_array is array(integer range <>) of integer;
+	type int_image_vector is array(0 to 8) of integer;
+	type int_image_block is array(0 to 8) of int_image_vector;
+end package;

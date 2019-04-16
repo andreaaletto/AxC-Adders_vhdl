@@ -94,7 +94,7 @@ component CB11 is
 end component CB11;
 
 	signal clk 			: std_logic := '0';
-	signal en 			: std_logic := '1';
+	signal en 			: std_logic := '0';
 	signal rst_n		: std_logic := '1';
 	signal ready 		: std_logic := '0';
 
@@ -245,7 +245,7 @@ begin
 		variable expected : integer := 0; 
 		variable result : integer := 0; 
 	begin		
-
+		en <= '1';
 		wait for 80 ns; -- Il componente completa dopo 6 colpi di clock
 
 		for i in 0 to 7 loop
