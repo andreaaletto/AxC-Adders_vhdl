@@ -43,7 +43,22 @@ generic (
     nab11		: natural 			:= 0;
     nab12		: natural 			:= 0;
     nab13		: natural 			:= 0;
-    nab14		: natural 			:= 0
+    nab14		: natural 			:= 0;
+    cell0		: natural 			:= 0;
+    cell1		: natural 			:= 0;
+    cell2		: natural 			:= 0;
+    cell3		: natural 			:= 0;
+    cell4		: natural 			:= 0;
+    cell5		: natural 			:= 0;
+    cell6		: natural 			:= 0;
+    cell7		: natural 			:= 0;
+    cell8		: natural 			:= 0;
+    cell9		: natural 			:= 0;
+    cell10		: natural 			:= 0;
+    cell11		: natural 			:= 0;
+    cell12		: natural 			:= 0;
+    cell13		: natural 			:= 0;
+    cell14		: natural 			:= 0
 	);
     port (
 			clk		: in   std_logic;
@@ -235,35 +250,35 @@ begin
     PEA14_inst : PEA14
         generic map(
             nab0 			=> nab0,
-				cell_type0 		=> cell_AMA1,
+				cell_type0 		=> Inexact_cell_type'val(cell0),
 				nab1 			=> nab1,
-				cell_type1 		=> cell_AMA1,
+				cell_type1 		=> Inexact_cell_type'val(cell1),
 				nab2 			=> nab2,
-				cell_type2 		=> cell_AMA1,
+				cell_type2 		=> Inexact_cell_type'val(cell2),
 				nab3 			=> nab3,
-				cell_type3 		=> cell_AMA1,
+				cell_type3 		=> Inexact_cell_type'val(cell3),
 				nab4 			=> nab4,
-				cell_type4 		=> cell_AMA1,
+				cell_type4 		=> Inexact_cell_type'val(cell4),
 				nab5 			=> nab5,
-				cell_type5 		=> cell_AMA1,
+				cell_type5 		=> Inexact_cell_type'val(cell5),
 				nab6 			=> nab6,
-				cell_type6 		=> cell_AMA1,
+				cell_type6 		=> Inexact_cell_type'val(cell6),
 				nab7 			=> nab7,
-				cell_type7 		=> cell_AMA1,
+				cell_type7 		=> Inexact_cell_type'val(cell7),
 				nab8 			=> nab8,
-				cell_type8 		=> cell_AMA1,
+				cell_type8 		=> Inexact_cell_type'val(cell8),
 				nab9 			=> nab9,
-				cell_type9 		=> cell_AMA1,
+				cell_type9 		=> Inexact_cell_type'val(cell9),
 				nab10 			=> nab10,
-				cell_type10 	=> cell_AMA1,
+				cell_type10 	=> Inexact_cell_type'val(cell10),
 				nab11 			=> nab11,
-				cell_type11 	=> cell_AMA1,
+				cell_type11 	=> Inexact_cell_type'val(cell11),
 				nab12 			=> nab12,
-				cell_type12 	=> cell_AMA1,
+				cell_type12 	=> Inexact_cell_type'val(cell12),
 				nab13 			=> nab13,
-				cell_type13 	=> cell_AMA1,
+				cell_type13 	=> Inexact_cell_type'val(cell13),
 				nab14 			=> nab14,
-				cell_type14 	=> cell_AMA1
+				cell_type14 	=> Inexact_cell_type'val(cell14)
         )
         port map(
             clk => clk,
