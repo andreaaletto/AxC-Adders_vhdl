@@ -152,7 +152,7 @@ begin
 	
 		-- stimulus process
 	stim_proc: process
-		file file_handler     			: text open read_mode is "/home/andrea/vhdl_adders/Testbench/DCT2D_workload_characterization/lena.txt";
+		file file_handler     			: text open read_mode is "../Testbench/DCT2D_workload_characterization/lena.txt";
 		variable row                    : line;
 		variable val            		: integer;
 		variable v_data_row_counter     : integer := 0;
