@@ -241,12 +241,12 @@ begin
 		for i in 0 to 7 loop
 			for j in 0 to 7 loop
 				
-				expected := to_integer(signed(blk_expected(i)(j)));
-				result := to_integer(signed(blk_out(i)(j)));
+				-- expected := to_integer(signed(blk_expected(i)(j)));
+				-- result := to_integer(signed(blk_out(i)(j)));
 
-				assert blk_out(i)(j) = blk_expected(i)(j)
-				report "Errore calcolo componente (" & integer'image(i) & "," & integer'image(j) & "). Expected=" & integer'image(expected) & "; Result=" & integer'image(result)
-				severity error;
+				-- assert blk_out(i)(j) = blk_expected(i)(j)
+				-- report "Errore calcolo componente (" & integer'image(i) & "," & integer'image(j) & "). Expected=" & integer'image(expected) & "; Result=" & integer'image(result)
+				-- severity error;
 			
 			end loop;
 		end loop;
