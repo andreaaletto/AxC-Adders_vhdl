@@ -42,7 +42,7 @@ end InAx2;
 
 --! @brief Implementazione data-flow del sommatore
 architecture InAx2 of InAx2 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= carry_in or (not add_1 and add_2) or (add_1 and not add_2);

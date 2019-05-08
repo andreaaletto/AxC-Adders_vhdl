@@ -41,8 +41,7 @@ entity AMA2 is
 end AMA2;
 
 --! @brief Implementazione data-flow del sommatore
-architecture AMA2 of AMA2 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+architecture AMA2 of AMA2 is 
 begin
 
 	sum 			<=  (not add_1 and not add_2) or (not add_1 and not carry_in) or (not add_2 and not carry_in);

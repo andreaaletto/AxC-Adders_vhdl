@@ -40,7 +40,7 @@ entity AMA3 is
 end AMA3;
 
 architecture AMA3 of AMA3 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= (not add_1 and not add_2) or (not add_2 and not carry_in);

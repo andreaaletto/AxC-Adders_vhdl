@@ -40,7 +40,7 @@ entity AXA1 is
 end AXA1;
 
 architecture AXA1 of AXA1 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= carry_in;

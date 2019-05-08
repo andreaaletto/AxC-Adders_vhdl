@@ -41,7 +41,7 @@ entity InAx3 is
 end InAx3;
 
 architecture InAx3 of InAx3 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= (not add_1 and not add_2) or (not add_1 and not carry_in) or (not add_2 and not carry_in);

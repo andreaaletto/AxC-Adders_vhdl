@@ -41,7 +41,7 @@ entity AXA2 is
 end AXA2;
 
 architecture AXA2 of AXA2 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= (not add_1 and not add_2) or (add_1 and add_2);

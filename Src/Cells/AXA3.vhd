@@ -40,7 +40,7 @@ entity AXA3 is
 end AXA3;
 
 architecture AXA3 of AXA3 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= (not add_1 and not add_2 and carry_in) or (add_1 and add_2 and carry_in);

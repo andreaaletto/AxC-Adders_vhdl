@@ -40,7 +40,7 @@ entity AMA4 is
 end AMA4;
 
 architecture AMA4 of AMA4 is
-	signal in_concat : std_logic_vector(2 downto 0) := add_1 & add_2 & carry_in;  
+	 
 begin
 
 	sum 			<= (not add_1 and carry_in) or (add_2 and carry_in);
