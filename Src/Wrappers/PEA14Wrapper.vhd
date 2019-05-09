@@ -30,35 +30,36 @@ use work.ImageBlockType.all;
 entity PEA14Wrapper is
 generic (
     nab0		: natural 			:= 0;
-    nab1		: natural 			:= 0;
-    nab2		: natural 			:= 0;
-    nab3		: natural 			:= 0;
-    nab4		: natural 			:= 0;
-    nab5		: natural 			:= 0;
-    nab6		: natural 			:= 0;
-    nab7		: natural 			:= 0;
-    nab8		: natural 			:= 0;
-    nab9		: natural 			:= 0;
-    nab10		: natural 			:= 0;
-    nab11		: natural 			:= 0;
-    nab12		: natural 			:= 0;
-    nab13		: natural 			:= 0;
-    nab14		: natural 			:= 0;
     cell0		: natural 			:= 0;
+    nab1		: natural 			:= 0;
     cell1		: natural 			:= 0;
+    nab2		: natural 			:= 0;
     cell2		: natural 			:= 0;
+    nab3		: natural 			:= 0;
     cell3		: natural 			:= 0;
+    nab4		: natural 			:= 0;
     cell4		: natural 			:= 0;
+    nab5		: natural 			:= 0;
     cell5		: natural 			:= 0;
+    nab6		: natural 			:= 0;
     cell6		: natural 			:= 0;
+    nab7		: natural 			:= 0;
     cell7		: natural 			:= 0;
+    nab8		: natural 			:= 0;
     cell8		: natural 			:= 0;
+    nab9		: natural 			:= 0;
     cell9		: natural 			:= 0;
+    nab10		: natural 			:= 0;
     cell10		: natural 			:= 0;
+    nab11		: natural 			:= 0;
     cell11		: natural 			:= 0;
+    nab12		: natural 			:= 0;
     cell12		: natural 			:= 0;
+    nab13		: natural 			:= 0;
     cell13		: natural 			:= 0;
+    nab14		: natural 			:= 0;
     cell14		: natural 			:= 0
+    
 	);
     port (
 			clk		: in   std_logic;
