@@ -1,5 +1,6 @@
 sudo: required
 language: C
+dist: xenial
 
 services:
 - docker
